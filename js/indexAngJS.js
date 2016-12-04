@@ -31,8 +31,8 @@ console.log("indexAngJS.js file initiated...");
 		(function(){
 			console.log("function is working...")
 			
-			$.get("layouts/_header.html", function(data){
-				console.log('invoked function in appendHeaderAndFooter')
+			$.get("header.html", function(data){
+				console.log('invoked function in appendHeaderAndFooter');
 				$("body").append(data);
 			})
 

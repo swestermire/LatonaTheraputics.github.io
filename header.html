@@ -1,0 +1,34 @@
+<header>
+	<nav id = "website-header" class="navbar navbar-default navbar-fixed-top">
+			<div class="container"> 
+				
+				<div id = 'header-image-container' class ='navbar-header'>
+					<a href= <%=home_path%> class ="pull-left">
+						<div id='logo-img' alt="Logo Image"></div>
+					</a>
+				</div>
+				
+				<button type="button"
+				id = collapsed-toggle-btn 
+				class = "navbar-toggle"
+				data-toggle = "collapse"
+				data-target = "#collapsed-header-btns">
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+				</button>
+
+				<nav id = collapsed-header-btns 
+				class  = 'collapse navbar-collapse'>
+					<ul class= "page_list nav navbar-nav navbar-right">
+						<li><%= link_to "Home", home_path%></li>
+						<li><%= link_to "Therapy", therapy_path%></li>
+						<li><%= link_to "About Us", about_us_path%></li>
+						<li><%= link_to "News", news_path%></li>
+						<li><%= link_to "Get In Touch", getintouch_path%></li>
+						<li><%= link_to "Partners", partners_path%></li>
+					</ul>
+				</nav>
+		</div>
+	</nav>
+</header>
