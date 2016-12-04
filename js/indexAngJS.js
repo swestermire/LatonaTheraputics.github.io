@@ -6,8 +6,10 @@ console.log("indexAngJS.js file initiated...");
 	
 	var app = angular.module("indexApp", ["ngRoute"]);
 
+	app.controller('appendHeaderAndFooter' , appendHeaderAndFooterCtrl);
+
 	app.config(function($routeProvider){
-		console.log("Route Function Hit... ")
+		console.log("Route Function Hit... ");
 		$routeProvider
 		
 		.when("/", {
@@ -19,5 +21,23 @@ console.log("indexAngJS.js file initiated...");
 		})
 
 	});
+
+	appendHeaderAndFooterCtrl.$inject = ["$scope"];
+	function appendHeaderAndFooterCtrl($scope){
+
+		$scope.title = "This is the scope";
+
+		// this isn't good that I'm mixing jquery with angularJS
+		(function(){
+			console.log("function is working...")
+			
+			$.get("layouts/_header.html", function(data){
+				console.log('invoked function in appendHeaderAndFooter')
+				$("body").append(data);
+			})
+
+		})();
+
+		};
 
 })();
