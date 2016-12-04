@@ -1,9 +1,13 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel = 'stylesheet' type = text/css href = styles.css.scss>
+
 <header>
 	<nav id = "website-header" class="navbar navbar-default navbar-fixed-top">
 			<div class="container"> 
 				
 				<div id = 'header-image-container' class ='navbar-header'>
-					<a href= <%=home_path%> class ="pull-left">
+					<a href= latonaTheraputicsHome.html class ="pull-left">
 						<div id='logo-img' alt="Logo Image"></div>
 					</a>
 				</div>
@@ -21,12 +25,12 @@
 				<nav id = collapsed-header-btns 
 				class  = 'collapse navbar-collapse'>
 					<ul class= "page_list nav navbar-nav navbar-right">
-						<li><%= link_to "Home", home_path%></li>
-						<li><%= link_to "Therapy", therapy_path%></li>
-						<li><%= link_to "About Us", about_us_path%></li>
-						<li><%= link_to "News", news_path%></li>
-						<li><%= link_to "Get In Touch", getintouch_path%></li>
-						<li><%= link_to "Partners", partners_path%></li>
+						<li><a href = #home> Home </a> </li>
+						<li> <a href = #therapy> Therapy </a> </li>
+						<li> <a href = #aboutus> About Us </a> </li>
+						<li><a href = #news> News </a> </li>
+						<li> <a href = #getintouch> Get In Touch </a> </li>
+						<li><a href = #partners> Partners </a> </li>
 					</ul>
 				</nav>
 		</div>
