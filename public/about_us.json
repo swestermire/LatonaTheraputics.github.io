@@ -1,0 +1,15 @@
+{
+
+	"person1" : {"firstName" : "SLeila",
+				 "lastName" : "Blahbalhbalh",
+				 "favoriteFood" : "Kitty Hair hahahahah",
+				 "age" : 30},
+				 
+	"person2" : {"firstName" : "Steven",
+				 "lastName" : "Westermire",
+				 "favoriteFood" : "Kitty Poo",
+				 "age" : 25},
+				 
+	"mengYangChen" : {"info" : "Meng-Yang Chen is a student.  His passion is in developing innovative medical devices." 
+					 }
+}
