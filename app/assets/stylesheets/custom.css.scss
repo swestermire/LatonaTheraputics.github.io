@@ -1,0 +1,1126 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/*classes for simple testing*/
+
+.test{
+  background-color: green !important;
+}
+
+.row{
+  background-color: rgb(240, 240, 240);
+}
+
+.off-row{
+  background-color: transparent;
+}
+
+/*//all rules//*/
+.container-fluid {
+  padding: 0 0 0 0 !important;
+  overflow-x: h
+}
+
+/*hover functionality*/
+.person-tile:hover{
+  border-color:red !important;
+}
+
+/*Designed Layouts*/
+.layout-1{
+  background-color: rgb(245,245,245);
+/*  border-top: 1px solid rgb(200,200,200);
+  border-bottom: 1px solid rgb(200,200,200);*/
+}
+
+/*This is the title in the middle of the banner picture*/
+.banner-text{
+  position: absolute;
+  width: 100% ;
+  text-align: center ;
+  font-size: 62px;
+  color: rgb(250,250,250) ;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black ;
+  top: 50%;
+}
+
+/*javascript dependent layouts*/
+#bio-text{
+  color: red;
+}
+
+#bio-text-layout-person1{
+  /*background:url("NiceGermanScientist.jpg") no-repeat center center;*/
+  border-radius: 25px;
+  margin-left: 10vw;
+  margin-top: 20px;
+  border: 2px solid rgb(0,0,0);
+  width: 78%;
+  
+  > h2 {
+    padding: 10px 20px 10px 20px;
+    
+    /*This updates the position of the text boxes*/
+    margin-left: 5%;
+    margin-top: 10%;
+    
+    color: green;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 500px;
+    max-width: 400px;
+    vertical-align: center;
+    background-color: rgba(255,255,255,.5);
+  }
+}
+
+#bio-text-layout-person2{
+  /*background:url("NiceGermanScientist.jpg") no-repeat center center;*/
+  border-radius: 25px;
+  margin-top: 20px;
+  border: 2px solid rgb(100,100,100);
+  width: 78%;
+  
+  > h2 {
+    padding: 10px 20px 10px 20px;
+
+    /*This updates the position of the text boxes*/
+    margin-left: 40vw;
+    margin-top: 10%;
+    
+
+    color: black;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 500px;
+    max-width: 400px;
+    vertical-align: center;
+    background-color: rgba(255,255,255,.5);
+  }
+}
+
+/*about us page*/
+/*about-us personal tiles*/
+
+.person-row{
+  padding: 25px 0 25px 0;
+  margin-left: 10vw;
+  > h1 {
+    margin:0 auto;
+    margin-bottom: 25px;
+  }
+
+  > #person-tile-row{
+    #person1 {
+      background: url("NiceGermanScientistSquare.jpg") no-repeat center center;
+      background-size: contain;
+    }
+
+    #person2 {
+      background: url("MengYangChenPortrait.jpg") no-repeat center center;
+      background-size: contain;
+    }
+
+    .person-tile{
+      position: relative;
+      padding: 1vw 1vw 1vw 1vw;
+      border: 1px solid black;
+      height: 10vw;
+      width: 10vw;
+      margin-right: 1vw;
+      float: left;
+      border-radius: 5px;
+      overflow: hidden;
+
+      > p {
+        position: absolute;
+        margin: 0 0 0 0;
+        bottom: 0%;
+        width: 100%;
+        left: 0%;
+        background-color: rgba(240,240,240,0.8);
+        text-align: center;
+
+        :hover {
+          color: red;
+        }
+      }
+    }
+  }
+}
+.on-set{
+  background-color: white !important;
+}
+
+.off-set{
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+//Header//
+/* navbar */
+
+#website-header{
+  background-color: rgb(255,255,255);
+  margin: auto;
+  /* border-bottom: 5px solid black; */
+  color: rgb(50,50,50);
+  font-family: "Verdana";
+  height: 200px;
+}
+
+#collapsed-header-btns{
+
+  font-size: 16px;
+  margin-top: 150px;
+  
+  @media(min-width: 750px){
+    right: 2%;
+    bottom: -2%;
+  }
+
+  @media(max-width: 749px){
+    right: 2%;
+    bottom: 10%;
+  }
+}
+
+/*@media (max-width: 990px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}*/
+
+.page_list{
+  margin: auto;
+}
+
+div {
+  padding: 0 0 0 0;
+}
+
+.company-name-header{
+  margin-top:50px;
+}
+
+#logo-img {
+  float:left;
+  margin-top: 10px;
+  width: 425px;
+  height: 150px;
+  background: url('latonaLogo850x300') no-repeat;
+  background-size: cover;
+}
+
+.navbar-default {
+    background-color:   rgb(255, 255, 254);
+    border-color:   rgb(255, 255, 255);
+    
+} 
+
+/*//main page media query for background image//*/
+@media (min-width: 1px) and (max-width: 449px){
+    .mainpg_bg {
+    opacity: .8;
+    background:url('pipetting_lab_tech412x165.jpeg')no-repeat center center; //adding fixed, what does that do?
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    
+    background-size: cover;  
+    height: 750px;
+    width: 100%;
+    background-color: black;
+    margin-top: -100px !important;
+    }
+}
+
+@media (min-width: 450px) and (max-width: 767px){
+  .mainpg_bg {
+    opacity: .8;
+    background:url('pipetting_lab_tech1024x620.jpeg')no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    
+    background-size: cover; 
+    height: 750px;
+    width: 100%;
+    background-color: black;    
+    }  
+}
+
+@media (min-width: 768px){
+  .mainpg_bg{
+    opacity: .8;
+    background:url('pipetting_lab_tech1800x720.jpeg')no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+    padding: 0 0 0 0;
+    height: 750px;
+    width: 100%;
+    background-color: black;
+    margin: -50px auto;
+   }
+}
+
+/*//Footer//*/
+#footer_creator {
+  text-align:right;
+}
+
+/*//Main Page Typography//*/
+.intro_phrase {
+  margin-top: 0px;
+  padding-top: 350px;
+  width: 100%;
+  text-align: center;
+  
+  color: rgb(10,10,10);
+  
+  /* text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; */
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 30px;
+}
+
+#about_us_header_picture{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 62px;
+  color: rgb(250,250,250);
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  padding: 300px 0 0 0;
+}
+
+.embedded_intro_vid {
+  /* background-color: rgba(255,200,0,0.8); */
+  margin: 120px auto;
+  padding: 120px 0 20px 0 ;
+  position:relative;
+  height: 700px;
+
+  > iframe {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    left: 23%;
+  }
+}
+
+#affiliations-row{
+  height: 300px;
+  background-color: rgb(240, 240, 240);
+}
+
+
+/*//About Us Page Typography//*/
+
+.persons_bio > h2 {
+  padding-left:25px;
+}
+
+/*//About Us Page//*/
+.about_us{
+    position: relative;
+    opacity: .80;
+    background:url('chicago_skyline 1500 x 938.jpeg')no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+    margin-top:0px;
+    padding: 0 0 0 0;
+    height: 750px;
+    width: 100%;
+    background-color: black;
+        
+  p:hover{
+    /*background-color:yellow;*/
+  }
+}
+
+#mission_statement_ct {
+  margin: 0 0 0 0;
+  background-color: white;
+
+  > div {
+    font-size: 64px;
+    text-align: left;
+    padding: 100px 0 0 0;
+    
+  }
+  
+  #mission_statement_content { 
+    padding: 0 0 100px 0;
+  }
+}
+
+#our_story_container{
+  padding: 100px 0 100px 0;
+  text-align: left;
+  > div {
+    font-size: 64px;
+    margin-left: 10px;
+  }
+}
+
+#persons_bio_container{
+  background-color:lightyellow;
+  padding-bottom: 20px;
+  
+  .persons_bio{
+    /*background:url("NiceGermanScientist.jpg") no-repeat center center;*/
+    border-radius: 25px;
+    margin-left: 10vw;
+    margin-top: 20px;
+    border: 2px solid rgb(0,0,0);
+    width: 78%;
+  }
+}
+
+.section-title-layout1{
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  padding-top:100px;
+}
+
+#technology-section{
+  font-family: "Verdana";
+}
+
+#technology-section-content{  
+  
+  @media (min-width: 900px){
+    margin-left:3%;
+    margin-right:3%;}
+  
+  @media (max-width: 899px){
+    margin-left: 3%;
+    padding-right: 2%;
+    margin-right: auto;
+    
+  }
+}
+
+#technology-section-image{
+  background:url('CADRandomDevice.jpg')no-repeat center center; /*//adding fixed, what does that do? */
+  height: 300px;
+  width: 50%;
+  // background-color: black;
+  
+  @media (min-width: 899px){
+    margin-top:100px;
+  /*// need to create an in-line block?*/
+  }
+}
+
+#capability-container{
+  border: 5px solid black;
+  height: 250px;
+  margin-top: 50px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 25px;
+  background:url('CADRandomDevice.jpg')no-repeat center center; /*//adding fixed, what does that do?*/ 
+  background-size: cover;
+}
+
+.capability-content{
+  text-align: center;
+  border: 3px solid rgb(100,100,100);
+  width: 48%;
+  border-radius: 20px;
+  min-height: 250px;
+}
+
+.capability-content:nth-child(2){
+  
+  @media(min-width: 900px){
+  margin-left: 2%;
+  margin-right: 2%;
+  background-color: white;
+  }
+}
+
+.cap-image1{
+    background:url('atomIcon.png') no-repeat center center;
+    margin: 10px auto;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+.cap-image2{
+    background:url('irIcon.png') no-repeat center center;
+    margin: 10px auto;
+    width: 100px;
+    height: 100px;
+    background-size: cover;  
+}
+
+.cap-image3{
+    background:url('toiletIcon.jpg') no-repeat center center;
+    margin: 10px auto;
+    width: 100px;
+    height: 100px;
+    background-size: cover;  
+}
+
+#layout-3-row{
+  margin-top: 50px;
+}
+
+.layout-3{
+  text-align: center;
+  margin: 0 auto;
+  margin-top:50px;
+  
+  > h1 {
+    font-size: 30px;
+    font-family: "Verdana";
+  }
+}
+
+#youtube-row{
+  width: 100%;
+  background-color: transparent !important;
+  
+  span {
+    color: black;
+  }
+}
+
+.youtube-video{
+  display: block;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 30px;
+  color: black;
+  background-color: rgba(250, 250, 250, 0.5);
+  min-height: 100px;
+  min-width: 100px;
+  margin: 25px auto;
+  margin-top: 35px;
+}
+
+#benefits{
+  margin: 0 auto;
+  >h1{
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}
+
+.benefits{
+  border: 3px solid black;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+#section-layout{
+  /*border-bottom: 3px solid grey;*/
+  padding-bottom: 50px;
+}
+
+.icon{
+  background-color: lightgrey;
+  height: 200px;
+  background-size: cover;
+}
+
+.caption-center-align{
+  text-align: center;
+  font-size: 20px;
+}
+
+.benefit-image-1{
+  background: url('immunoTherapy.jpg') no-repeat center center;
+  background-size: cover; 
+}
+
+.benefit-image-2{
+  background:url('Blood_Brain_Barrier.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+#owl-example{
+  width: 100%;
+}
+
+#carousel-img-1{
+  position: relative;
+  background:url("NiceGermanScientist.jpg") no-repeat center center;
+  background-size: cover;
+  height:500px;
+  
+  @media(min-width: 1000px){
+    background:url("NiceGermanScientist.jpg") no-repeat center center;
+    min-width: 1000px;
+    height: 500px;
+  }
+}
+
+.person-bio{
+  position: absolute;
+  padding: 10px 10px 10px 10px;
+  top: 25%;
+  left: 10%;
+  font-size: 25px;
+  max-width: 250px;
+  background-color: rgba(250,250,250,0.8);
+  border: 2px solid transparent;
+  border-radius: 5px;
+}
+
+
+/*####################################################
+THERAPY CSS
+#####################################################*/
+#therapy-banner-pic{
+    position: relative;
+    opacity: .80;
+    background:url('chicago_skyline 1500 x 938.jpeg')no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+    margin-top:0px;
+    padding: 0 0 0 0;
+    height: 750px;
+    width: 100%;
+    background-color: black;
+        
+  p:hover{
+    /*background-color:yellow;*/
+  }
+}
+
+#how-tech-works{
+  margin-top: 25px;
+  margin-bottom: 100px;
+  padding-bottom: 50px;
+  position: relative;
+  background-color: white;
+
+  /*!!! probably need to update this !!!*/
+  #how-tech-works-img{
+    position: absolute;
+    background: url('techDiagram.png') no-repeat;
+    background-size: contain;
+
+    @media (min-width: 1600px){
+      margin-left: 100px;
+      margin-top: 50px;
+      left: 10%;
+      top: 10px;
+      height: 30vw;
+      width: 30vw;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1599px){
+      height: 40vw;
+      width: 40vw;
+      top: 7%;
+      left: 7%;
+    }
+
+    @media(min-width: 901px) and (max-width: 1199px){
+      background-color:lightgrey;
+      top: 7%;
+      left: 7%;
+      height: 40vw;
+      width: 40vw;
+    }
+
+    @media(max-width: 900px){
+      top: 100px;
+      height: 40vw;
+      width: 40vw;
+      left: 100px;
+      background-color:pink;
+    }
+  }
+
+  #how-tech-works-content{
+    position: absolute;
+    left: 50%;
+    max-width: 35vw;
+/*    border: 3px solid black;
+    border-radius: 5px;
+    padding: 10vw 10vw 10vw 10vw;*/
+    margin-top: 8%;
+  }
+
+  h3 {
+    margin-left: 20%;
+    font-size: 42px;
+    margin-bottom: 25px;
+  }
+
+  li {
+    font-size: 32px;
+  }
+
+  #therapy-content-lnk{
+    font-size: 24px;
+    margin-left: 30%;
+    margin-top: 25px;
+    text-decoration: underline;
+    border: 3px solid black;
+    padding: 15px 15px 15px 15px;
+    border-radius: 15px; 
+    width: 160px;  
+  }
+  a{
+    color:black;
+
+    :hover{
+      background-color: grey;
+    }
+  }
+}
+
+#therapy-flow{
+  position: relative;
+  margin-top: 25px;
+
+    @media(min-width: 500px) and (max-width: 992px){
+      height: 550px;
+    }
+
+    @media(min-width: 993px) and (max-width: 1200px){
+      height: 550px;
+
+    }
+
+    @media (min-width: 1201px){
+    }
+
+  #therapy-flow-content{
+    text-align: left;
+
+    @media(min-width: 1201px){
+      margin-top: 12.5%;
+      margin-left: 75px;
+    }
+
+    @media(min-width: 993px) and (max-width: 1200px){
+      margin-top: 0px;
+      text-align: center;
+      width: 100vw;
+    }
+
+    @media(max-width: 992px){
+      margin-top: 0%;
+      text-align: center;
+      width: 100vw;
+      background-color: yellow;
+    }
+
+
+    h3{
+      font-size: 32px;
+    }
+
+  }
+
+  #therapy-flow-img{
+    
+    @media (min-width: 500px) and (max-width: 992px){
+      margin-top: 2%;
+      margin-left:5%;
+      height: 40vw;
+      width: 100%;
+    }
+
+    @media(min-width: 993px) and (max-width: 1200px){
+      margin-top: 2%;
+      margin-left: 15%;
+      width: 70%;
+      height: 50vw;
+
+    }
+
+    @media (min-width: 1201px){
+      margin-top: 5%;
+      margin-left: 5%;
+      width: 50%;
+      height: 30vw;
+    }
+
+    @media (max-width: 970px){
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+    }
+    background: url('therapyFlow.png') no-repeat;
+    background-size: contain;
+  }
+}
+
+#CAD-section{
+  height: 700px;
+  position: relative;
+
+  #CAD-img{
+    position: absolute;
+    left: 10%;
+    width: 30vw;
+    height: 30vw;
+    top: 50px;
+    /*background: ;*/
+    background-color: darkgrey;
+  }
+
+  #CAD-content{
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    max-width: 30vw;
+    h3 {
+      font-size: 32px;
+    }
+  }
+}
+
+
+
+#breast-cancer-chart{
+  height: 700px;
+  position: relative;
+
+  #breast-cancer-chart-content{
+    position: absolute;
+    left: 9%;
+    top: 100px;
+    max-width: 30vw;
+
+    h3 {
+      font-size: 32px;
+    }
+
+    li {
+      font-size: 24px;
+    }
+  }
+
+  #breast-cancer-chart-img{
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    height: 35vw;
+    width: 35vw;
+    background: url('breastCancerGraph.png') no-repeat;
+    background-size: contain;
+  }
+}
+
+.section-title{
+  text-align: center;
+}
+
+#patient-benefit{
+  text-align: center;
+}
+
+/*GET IN TOUCH STYLING*/
+
+#intouch-banner-pic{
+    position: relative;
+    opacity: .80;
+    background:url('chicago_skyline 1500 x 938.jpeg')no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+    margin-top:0px;
+    padding: 0 0 0 0;
+    height: 750px;
+    width: 100%;
+    background-color: black;
+}
+
+/*!!! TRY IMPLEMENTING nTH CHILD FUNCTIONALITY !!!
+Can implement nth child functionality. */ 
+#contact-us-row{
+  h2{
+    margin-left: 3%;
+  }
+}
+
+.intouch-field:nth-child(n){
+  margin-left: 3%; /*Needs to be the same as contact-us-row h2{}*/
+}
+
+.intouch-field{
+  margin-top: 25px;
+  font-size: 24px;
+}
+
+#googMaps{
+  padding: 0 0 0 0;
+  background-size: contain;
+  margin-top: 5%;
+  margin-right: 10%;
+  border: 5px solid black;
+  border-radius: 15px;
+  width: 20vw;
+  min-width: 15vw;
+  height: 20vw;
+  min-height: 15vw;
+  background-color: green;
+}
+
+#googMaps-address{
+}
+
+#message-field{
+  width: 80vw;
+  height: 200px;
+  margin-left: 10%;
+  border: 5px solid black;
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+#msg-snd-btn{
+  margin-top: 25px;
+  font-size: 32px;
+  height: 3vw;
+  width: 15vw;
+  bottom: 0%;
+  right: 0%;
+  margin-left: 75vw;
+}
+
+/*Styling for News Page*/
+.circle-offset{
+  margin-top: 10px;
+}
+
+.article-offset{
+  margin-top:120px;
+}
+
+.circle{
+  border-radius: 30px;
+  height: 50px;
+  width: 50px;
+}
+
+.line-horiz{
+  margin-top: 10px;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.line-vert-offset {
+/*   min-height: 265px; */
+  height: 50px !important;
+  width: 20px;
+  margin-top: 10px;
+  border-radius: 25px;
+  margin-left: 15px;
+}
+
+.line-vert {
+/*   min-height: 265px; */
+  height: 260px !important;
+  width: 20px;
+  margin-top: 10px;
+  border-radius: 25px;
+  margin-left: 15px;
+}
+
+.purple{
+  background-color:purple;
+}
+
+.green{
+  background-color: green;
+  border: 1px solid rgb(0,155,0)
+}
+
+.red{
+  background-color: red;
+  border: 1px solid rgb(155,0,0)
+}
+
+
+.timeline-row{
+  position: relative;
+  background-color: rgb(200,200,250);
+  padding-top: 10px;
+}
+
+.random-section{
+  position: absolute;
+  border: 1px solid black;
+  top: 15%;
+  left: 15%;
+}
+
+.article-section-left{
+  position: absolute;
+  border: 1px solid black;
+  top: 0%;
+  left: 0%;
+  width: 25vw;
+  border-radius: 10px;
+}
+
+.article-section-right{
+  position: absolute;
+  border: 1px solid black;
+  top: 0%;
+  left: 55%;
+  width: 25vw;
+  border-radius: 10px;
+}
+
+.title-background{
+  top: 0%;
+  left: 0%;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.title{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.article-title{
+  
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  
+  font-size: 20px;
+  background-color: black;
+  color: white;  
+}
+
+
+.timeline-marker-section{
+  background-color: white;
+  max-width: 0px;
+  margin-left: 48.8%;
+}
+
+.arrow-right {
+  position: absolute;
+  top: 5%;
+  left: 100.2%;
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 15px solid black;
+}
+
+.arrow-left {
+  position: absolute;
+  top: 5%;
+  left: -2.0%;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;  
+  border-right:15px solid black; 
+}
+
+.article-body{
+  font-size: 20px;
+  margin-top: -10px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.news-article{
+  
+}
+
+.outer-circle{
+  position: relative;
+  background-color:blue;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  margin-left: -25px;
+}
+
+.inner-circle{
+  background-color: white;
+  height: 75px;
+  width: 75px;
+  border-radius: 40px;
+  position: absolute;
+  left: 12%;
+  top: 12%;
+}
+
+#timeline-year{
+  position: absolute;
+  left: 28%;
+  top: 15%;
+}
+
+.rocket-glyph{
+  background:url("https://www.namsral.com/img/rocket_launch.svg") center no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+}
+  
+.timeline-date{
+  margin-top:-10px;
+  padding-left: 10px;
+}
+
+.article-icon{
+  margin-left: 10px;
+  margin-bottom: 20px;
+  margin-top:-10px;
+}
+
+.article-topic-type{
+  margin-left: 50px;
+  width: 50%;
+  background-color: trabsparent;
+  margin-top: -60px;
+  margin-left: 70px;
+  text-decoration: underline;
+}
