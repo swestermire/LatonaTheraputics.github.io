@@ -7,6 +7,7 @@ console.log("indexAngJS.js file initiated...");
 	var app = angular.module("indexApp", ["ngRoute"]);
 
 	app.config(function($routeProvider){
+		console.log("Route Function Hit... ")
 		$routeProvider
 		
 		.when("/", {
