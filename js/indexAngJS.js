@@ -31,7 +31,7 @@ console.log("indexAngJS.js file initiated...");
 		$scope.projectList = {
 			LatonaTheraputics : {
 				title : "Latona Theraputics Website",
-				version : "1.511v",
+				version : "1.512v",
 				href : "static/views/latonaTheraputicsHome.html"
 			}
 		};
