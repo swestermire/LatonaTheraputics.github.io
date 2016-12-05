@@ -31,17 +31,23 @@ console.log("indexAngJS.js file initiated...");
 		(function(){
 			console.log("function is working...")
 			
+<<<<<<< HEAD
 			// adds the header
+=======
+>>>>>>> 4e221fd2f5a6e14e1d6bb840c2f558c664c14726
 			$.get("layouts/header.html", function(data){
 				console.log('invoked function in appendHeaderAndFooter');
 				$(".header").append(data);
 			})
 
+<<<<<<< HEAD
 			// adds the footer
 			$.get("layouts/footer.html" , function(data){
 				$(".footer").append(data);
 			})
 
+=======
+>>>>>>> 4e221fd2f5a6e14e1d6bb840c2f558c664c14726
 		})();
 
 		};
