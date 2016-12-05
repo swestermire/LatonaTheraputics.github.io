@@ -13,11 +13,11 @@ console.log("indexAngJS.js file initiated...");
 		$routeProvider
 		
 		.when("/", {
-			templateUrl : "index.html"
+			templateUrl : "../index.html"
 		})
 
 		.when("/LatonaHome", {
-			templateUrl : "latonaTheraputicsHome.html"
+			templateUrl : "../static/views/latonaTheraputicsHome.html"
 		})
 
 	});
@@ -32,13 +32,13 @@ console.log("indexAngJS.js file initiated...");
 			console.log("function is working...")
 			
 			// adds the header
-			$.get("../layouts/header.html", function(data){
+			$.get("../../layouts/header.html", function(data){
 				console.log('invoked function in appendHeaderAndFooter');
 				$(".header").append(data);
 			})
 
 			// adds the footer
-			$.get("../layouts/footer.html" , function(data){
+			$.get("../../layouts/footer.html" , function(data){
 				$(".footer").append(data);
 			})
 
