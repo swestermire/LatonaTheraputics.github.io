@@ -6,6 +6,7 @@ console.log("indexAngJS.js file initiated...");
 	
 	var app = angular.module("indexApp", ["ngRoute"]);
 
+	app.controller('indexGeneralFunctions' , indexGeneralFunctionsCtrl)
 	app.controller('appendHeaderAndFooter' , appendHeaderAndFooterCtrl);
 
 	app.config(function($routeProvider){
@@ -21,6 +22,21 @@ console.log("indexAngJS.js file initiated...");
 		})
 
 	});
+
+	indexGeneralFunctionsCtrl.$inject = ["$scope"];
+	function indexGeneralFunctionsCtrl($scope){
+		var fullDate = new Date();
+		$scope.date = fullDate.getMonth() + '-' + fullDate.getDate() + '-' + fullDate.getFullYear();
+
+		$scope.projectList = {
+			LatonaTheraputics : {
+				title : "Latona Theraputics Website",
+				version : "1.511v",
+				href : "static/views/latonaTheraputicsHome.html"
+			}
+		};
+
+	};
 
 	appendHeaderAndFooterCtrl.$inject = ["$scope"];
 	function appendHeaderAndFooterCtrl($scope){

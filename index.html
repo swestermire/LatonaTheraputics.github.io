@@ -8,19 +8,19 @@
 
 <script src = "js/angular.route.min.js"> </script>
 
-<script src = "js/angular.route.min.js"> </script>
-
 <script src = "js/indexAngJS.js"></script>
 
 <html ng-app = indexApp>
-	<body>
-	<p> This is the NG scope: {{ title }} </p>
+	<body ng-controller = indexGeneralFunctions>
+	<p> Today's Date: {{date}} </p>
 	<title> Project List Page </title>
 	<h5> Content created by Steven Tadashi Westermire </h5>
 	<h1> Project List </h1>
 	
 	<ul>
-		<li> <a href = static/views/latonaTheraputicsHome.html> Latona Theraputics Website </a>, 1.510v </li>
+		<li ng-repeat = "project in projectList">
+			<a href = {{project.href}}> {{project.title}}</a> ,{{project.version}}
+		</li>
 	</ul>
 	
 	</body>
