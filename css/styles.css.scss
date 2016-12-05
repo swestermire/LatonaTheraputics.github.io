@@ -109,12 +109,12 @@
 
   > #person-tile-row{
     #person1 {
-      background: url("NiceGermanScientistSquare.jpg") no-repeat center center;
+      background: url("images/NiceGermanScientistSquare.jpg") no-repeat center center;
       background-size: contain;
     }
 
     #person2 {
-      background: url("MengYangChenPortrait.jpg") no-repeat center center;
+      background: url("images/MengYangChenPortrait.jpg") no-repeat center center;
       background-size: contain;
     }
 
@@ -345,7 +345,7 @@ div {
 .about_us{
     position: relative;
     opacity: .80;
-    background:url('chicago_skyline 1500 x 938.jpeg')no-repeat center center; 
+    background:url('images/chicago_skyline 1500 x 938.jpeg')no-repeat center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -427,7 +427,7 @@ div {
 }
 
 #technology-section-image{
-  background:url('CADRandomDevice.jpg')no-repeat center center; /*//adding fixed, what does that do? */
+  background:url('images/CADRandomDevice.jpg')no-repeat center center; /*//adding fixed, what does that do? */
   height: 300px;
   width: 50%;
   // background-color: black;
@@ -445,7 +445,7 @@ div {
   border-radius: 5px;
   text-align: center;
   font-size: 25px;
-  background:url('CADRandomDevice.jpg')no-repeat center center; /*//adding fixed, what does that do?*/ 
+  background:url('images/CADRandomDevice.jpg')no-repeat center center; /*//adding fixed, what does that do?*/ 
   background-size: cover;
 }
 
@@ -598,7 +598,7 @@ THERAPY CSS
 #therapy-banner-pic{
     position: relative;
     opacity: .80;
-    background:url('chicago_skyline 1500 x 938.jpeg')no-repeat center center; 
+    background:url('images/chicago_skyline 1500 x 938.jpeg')no-repeat center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -624,7 +624,7 @@ THERAPY CSS
   /*!!! probably need to update this !!!*/
   #how-tech-works-img{
     position: absolute;
-    background: url('techDiagram.png') no-repeat;
+    background: url('images/techDiagram.png') no-repeat;
     background-size: contain;
 
     @media (min-width: 1600px){
@@ -828,7 +828,7 @@ THERAPY CSS
     top: 150px;
     height: 35vw;
     width: 35vw;
-    background: url('breastCancerGraph.png') no-repeat;
+    background: url('images/breastCancerGraph.png') no-repeat;
     background-size: contain;
   }
 }
@@ -846,7 +846,7 @@ THERAPY CSS
 #intouch-banner-pic{
     position: relative;
     opacity: .80;
-    background:url('chicago_skyline 1500 x 938.jpeg')no-repeat center center; 
+    background:url('images/chicago_skyline 1500 x 938.jpeg')no-repeat center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
