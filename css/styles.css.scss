@@ -31,6 +31,10 @@
 }
 
 /*This is the title in the middle of the banner picture*/
+.banner{
+ padding-top: 200px;
+}
+
 .banner-text{
   position: absolute;
   width: 100% ;
@@ -614,6 +618,15 @@ THERAPY CSS
   }
 }
 
+#how-tech-works-img{
+  margin-left: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: green;
+  background:url('images/techDiagram.png') no-repeat center center;
+  background-size: contain;
+}
+
 #how-tech-works{
   margin-top: 25px;
   margin-bottom: 100px;
@@ -624,7 +637,7 @@ THERAPY CSS
   /*!!! probably need to update this !!!*/
   #how-tech-works-img{
     position: absolute;
-    background: url('images/techDiagram.png') no-repeat;
+    background:url('images/techDiagram.png') no-repeat center center;
     background-size: contain;
 
     @media (min-width: 1600px){

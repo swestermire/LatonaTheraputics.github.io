@@ -4,6 +4,8 @@
 
 <script src = "../../js/jquery-3.1.1.min.js"></script>
 
+<script src = "../../js/timelineFunctionality.js"></script>
+
 <script src = ../../js/angular.min.js> </script>
 
 <script src = "../../js/angular.route.min.js"> </script>
@@ -16,114 +18,14 @@
 <!-- this adds the header into the page -->
 <header ng-controller = appendHeaderAndFooter><body class = header></body></header>
 
-
-
-
-
-<h1> Message Output: </h1>
-<h3 id = output1> </h3>
-
-<section class = timeline-row>
-
-  <section class = timeline-marker-section>
-    <div class = "circle green"> </div>
-
-    <div class = "line-vert purple"> </div>
-  </section>
-</section>
-
-
-<!-- This is for a article oriented left section -->
-<section class = timeline-row>
-  <section class = "article-section-left news-article">
-    
-    <div class = article-title>
-      
-      <div class = title-background> <h3 class = title> This is an article title date of 11-25-2016 </h3></div>
-    </div>
-    
-    <div class = article-body>
-      <h4> This is the actual body of the paragraph and on this date i was trying to create the article story to demonstrate a proof of concept design for this timeline design style.  The design of this article piece is completely managed through css.  As such the width has been defined to be a certain viewing width... may need to change.  The height is variable depending on the height of the article. </h4></div>
-    
-    <div class ="arrow-right black"></div>
-    
-  </section>
-    
-
-  <section class = timeline-marker-section>
-    <div class = "circle green"> </div>
-
-    <div class = "line-vert purple"> </div>
-  </section>
-</section>
-
-
-<!-- This is for a article oriented right section -->
-<section class = timeline-row>
-  <section class = "article-section-right news-article">
-    
-    <div class = article-title>
-      <div class = title-background> <h3 class = title> This is an article title date of 11-25-2016 </h3></div>
-    </div>
-    
-    <div class = article-body>
-      <h4> This is the actual body of the paragraph and on this date i was trying to create the article story to demonstrate a proof of concept design for this timeline design style.  The design of this article piece is completely managed through css.  As such the width has been defined to be a certain viewing width... may need to change.  The height is variable depending on the height of the article. </h4></div>
-    
-    <div class ="arrow-left"></div>
-    
-  </section>
-    
-
-  <section class = timeline-marker-section>
-    <div class = "circle red"> </div>
-
-    <div class = "line-vert purple"> </div>
-  </section>
-</section>
-
-<section class = timeline-row>
-  <section class = "article-section-left news-article">
-    
-    <div class = article-title>
-      <div class = title-background> <h3 class = title> This is an article title date of 11-25-2016 </h3></div>
-    </div>
-    
-    <div class = article-body>
-      <h4> This is the actual body of the paragraph and on this date i was trying to create the article story to demonstrate a proof of concept design for this timeline design style.  The design of this article piece is completely managed through css.  As such the width has been defined to be a certain viewing width... may need to change.  The height is variable depending on the height of the article. </h4></div>
-    
-    <div class ="arrow-right black"></div>
-    
-  </section>
-    
-
-  <section class = timeline-marker-section>
-    <div class = "circle green"> </div>
-
-    <div class = "line-vert purple"> </div>
-  </section>
-</section>
-
-<section class = timeline-row>
-  <section class = "article-section-left news-article">
-    
-    <div class = article-title>
-      <div class = title-background> <h3 class = title> This is an article title date of 11-25-2016 </h3></div>
-    </div>
-    
-    <div class = article-body>
-      <h4> On this day, we received the NiH patent for our awesome medical device comapny that will reoblutionize how people cure cancer. </h4></div>
-    
-    <div class ="arrow-right black"></div>
-    
-  </section>
-    
-
-  <section class = timeline-marker-section>
-    <div class = "circle green"> </div>
-
-    <div class = "line-vert purple"> </div>
-  </section>
-</section>
+<body>
+  <div class = article-collection-left> </div>
+  
+  <div class = timeline-gfx>
+  </div>
+  
+  <div class = article-collection-right></div>
+</body>
 
 <footer ng-controller = appendHeaderAndFooter><body class = footer></body></footer>
 </html>
