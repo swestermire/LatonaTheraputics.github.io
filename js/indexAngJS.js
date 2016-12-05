@@ -25,7 +25,7 @@ console.log("indexAngJS.js file initiated...");
 	appendHeaderAndFooterCtrl.$inject = ["$scope"];
 	function appendHeaderAndFooterCtrl($scope){
 
-		$scope.title = "This is the scope";
+		$scope.title = "Scope name provided by AngularJS";
 
 		// this isn't good that I'm mixing jquery with angularJS
 		(function(){
