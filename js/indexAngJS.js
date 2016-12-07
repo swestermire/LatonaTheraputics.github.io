@@ -65,10 +65,10 @@ console.log("indexAngJS.js file initiated...");
 
 	aboutUsPortraitCtrl.$inject = ['$scope'];
 	function aboutUsPortraitCtrl($scope){
-		$bioPortraits = $('.bio-portrait');
-		$bioCollection = $('.portrait-collection');
-		$latonaTeamTitle = $('#latona-team-title');
-		$biography = $('.biography');
+		var $bioPortraits = $('.bio-portrait');
+		var $bioCollection = $('.portrait-collection');
+		var $latonaTeamTitle = $('#latona-team-title');
+		var $biography = $('.biography');
 
 		// click event function that brings up portrait when portrait is clicked
 		$scope.portraitFocus = function(event){
@@ -91,13 +91,17 @@ console.log("indexAngJS.js file initiated...");
 		/// de-expands portraits
 		function deExpandedPortrait(){
 			$('.bio-portrait').each(function(){
-				$(this).css({"height" : 100 , "width" : 100});
+				$(this).addClass('.de-expanded-portrait');
 			})
 		};
 
 		/// resets the status of the portraits
 		function resetPortrait(){
-			$('.expanded-portrait').removeClass('expanded-portrait').addClass('bio-portrait')
+			$('.bio-portrait').each(function(){
+				$(this).removeClass('de-expanded-portrait');
+			})
+
+			$('.expanded-portrait').removeClass('expanded-portrait').addClass('bio-portrait');
 		};
 
 

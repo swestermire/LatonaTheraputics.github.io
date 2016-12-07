@@ -29,7 +29,7 @@ no other pages*/
 	width: 125px;
 	height: 125px;
 	border: 5px solid red;
-	border-radius: 75px;
+	border-radius: 200px;
 	background-color: pink;
 }
 
@@ -41,6 +41,11 @@ no other pages*/
 	border: 5px solid green;
 	border-radius: 200px;
 	background-color: pink;
+}
+
+.de-expanded-portrait{
+	width: 100px !important;
+	height: 100px !important;
 }
 
 .bio-portrait:last-child{
