@@ -4,9 +4,13 @@
   background-color: green !important;
 }
 
-.row{
-  background-color: rgb(240, 240, 240);
+.container-even{
+  background-color: rgb(225,225,255);
 }
+
+/*.row{
+  background-color: rgb(240, 240, 240);
+}*/
 
 .off-row{
   background-color: transparent;
@@ -370,14 +374,15 @@ div {
   background-color: white;
 
   > div {
-    font-size: 64px;
+    font-size: 32px;
     text-align: left;
     padding: 100px 0 0 0;
     
   }
   
-  #mission_statement_content { 
+  > #mission_statement_content { 
     padding: 0 0 100px 0;
+    background-color: green;
   }
 }
 
@@ -415,6 +420,7 @@ div {
 #technology-section{
   font-family: "Verdana";
 }
+
 
 #technology-section-content{  
   

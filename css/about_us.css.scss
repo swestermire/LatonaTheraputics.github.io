@@ -1,0 +1,73 @@
+/*ABOUT US PAGE CSS RULES - SOME ARE MANAGED BY JS/JQUERY*/
+
+/*Idea is to have this css page apply specifically to about us page and
+no other pages*/
+
+
+/*rule to test elements for alignment purposes*/
+.test{
+	background-color: green;
+}
+
+.entire-row-even{
+	background-color: white;
+}
+
+.container{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#latona-team-title{
+	text-align: center;
+}
+
+/*this will be a circle portrait by default*/
+.bio-portrait{
+	float:left;
+	margin-right: 20px;
+	width: 125px;
+	height: 125px;
+	border: 5px solid red;
+	border-radius: 75px;
+	background-color: pink;
+}
+
+.expanded-portrait{
+	float:left;
+	margin-right: 20px;
+	width: 200px;
+	height: 200px;
+	border: 5px solid green;
+	border-radius: 200px;
+	background-color: pink;
+}
+
+.bio-portrait:last-child{
+	margin-right: 0px;
+}
+
+.portrait-collection{
+	padding-top: 30px;
+}
+
+.latona-team-row{
+	position: relative;
+	min-height: 1000px;   
+}
+
+.biography{
+	margin-top: 50px;
+	padding: 10px 10px 10px 10px;
+	border: 2px solid black;
+	border-radius: 10px;
+	width: 70%;
+}
+
+.portrait-focused{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	border: 2px solid red;
+	background-color: pink;
+}
