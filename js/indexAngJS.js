@@ -86,12 +86,18 @@ console.log("indexAngJS.js file initiated...");
 		/// expands portrait
 		function expandPortrait(targetedID){
 			$('#' + targetedID).removeClass('bio-portrait').addClass('expanded-portrait');
+
+			// if ($($targetedElement).attr('class') === 'bio-portrait'){
+			// 	$targetedElement.removeClass('bio-portrait').addClass('expanded-portrait');
+			// } else if ($($targetedElement).attr('class') === 'expanded-portrait') {
+			// 	$targetedElement.addClass('bio-portrait').removeClass('expanded-portrait');
+			// };
 		};
 
 		/// de-expands portraits
 		function deExpandedPortrait(){
 			$('.bio-portrait').each(function(){
-				$(this).addClass('.de-expanded-portrait');
+				$(this).addClass('de-expanded-portrait');
 			})
 		};
 
@@ -105,7 +111,7 @@ console.log("indexAngJS.js file initiated...");
 		};
 
 
-		/// this function creates a separate portrait.  Right now it will not be implemented
+		/// this function creates a separate portrait.  Right now it is not implemented
 		function createFocusedPortrait(targettedID){
 			console.log("createFocusedPortrait initiated...")
 			$portraitUnfocused = $(".portrait-unfocused");
@@ -153,17 +159,17 @@ console.log("indexAngJS.js file initiated...");
 			var bioCollectionHeight = $($bioCollection).outerHeight(true);
 			
 			var biographyHeight = function(){
-				var $portraitFocused = $(".portrait-focused");
+				var $portraitFocused = $(".expanded-portrait");
 
-				console.log("$portraitFocused  = " + $portraitFocused )
-				if ($portraitFocused != undefined){
-					return $($portraitFocused).height();
+				console.log("$portraitFocused  = " + $($portraitFocused).attr('class') )
+				if ($($portraitFocused).attr('class') != undefined){
+					return Math.abs($($bioPortraits).height() - $($portraitFocused).height());
 				} else {
 					return 0;
 				}
 			}();
 
-			var biographyTop = bioPortraitHeight + bioTitleHeight + bioCollectionHeight;
+			var biographyTop = bioPortraitHeight + bioTitleHeight + bioCollectionHeight + biographyHeight;
 
 			console.log("biographyHeight = " + biographyHeight);
 
