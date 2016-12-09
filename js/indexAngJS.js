@@ -32,7 +32,7 @@ console.log("indexAngJS.js file initiated...");
 		$scope.projectList = {
 			LatonaTheraputics : {
 				title : "Latona Theraputics Website",
-				version : "1.515v",
+				version : "1.520v",
 				href : "static/views/latonaTheraputicsHome.html"
 			}
 		};
@@ -72,7 +72,9 @@ console.log("indexAngJS.js file initiated...");
 				"nick name" : "Meng",
 				"last name" : "Chen",
 				"role" : "Strategy",
+				"image": "MengCropped.png",
 				"biography" : "Meng has product marketing and systems engineering expertise from new product development programs in medical devices (in vitro diagnostics and peritoneal dialysis). He is attending the University of Chicago for his MBA, where he serves as a co-chair of the Healthcare Club and performs strategy consulting for a medical hospitality non-profit. He has a BS in Biomedical and Electrical/Computer Engineering from Duke. In his spare time, Meng enjoys playing piano, rock climbing, and watching as much Blue Devils basketball as possible."
+
 			},
 
 			p2 : {
@@ -80,6 +82,7 @@ console.log("indexAngJS.js file initiated...");
 				"last name" : "Nichols",
 				"nick name" : "" ,
 				"role" : "Engineering",
+				"image": "Dylan.png",
 				"biography" : "Dylan has extensive experience in medical device development and manufacturing support for devices in various stages of their evolution. He also has experience with process development and scale up in a bio-pharmaceutical setting. Dylan earned his degree in Chemical Engineering from Northeastern University and is currently working towards a graduate degree in Biomedical Engineering at Illinois Institute of Technology. His ideal day off includes a game of pond hockey followed by ice fishing."
 			},
 
@@ -88,6 +91,7 @@ console.log("indexAngJS.js file initiated...");
 				"last name" : "He",
 				"nick name" : "",
 				"role" : "Research",
+				"image":"YushengCropped.jpeg",
 				"biography" : "Yusheng He is a Ph.D. candidate in Biomedical Engineering at Illinois Institute of Technology. He has 4 years of research experience in synthetic biomaterials for tissue engineering and 2 years of experience in breast cancer research. In addition, Yusheng is also a co-inventor of a surgery training simulator device, and serves as science advisor role in that startup company. And his dog’s name is Uni."
 			},
 
@@ -96,6 +100,7 @@ console.log("indexAngJS.js file initiated...");
 				"last name" : "Young",
 				"nick name" : "",
 				"role" : "Research",
+				"image": "DanielCropped.jpeg",
 				"biography" : "Daniel Young is a graduate student with 8 years of experience in biomaterials and tissue engineering research. His dissertation includes synthesis and characterization of nanoparticles for bioactive factor delivery. Daniel enjoys the challenges and discovery of experimental design and applies it to his favorite hobby, cooking."
 			},
 
@@ -104,6 +109,7 @@ console.log("indexAngJS.js file initiated...");
 				"last name" : "Rangnekar",
 				"nick name" : "",
 				"role" : "Engineering",
+				"image": "",
 				"biography" :  "Aakanksha holds a Masters degree in Biomedical Engineering from Illinois Institute of Technology. Her expertise lies in medical device engineering, biomarker discovery, imaging, cancer research and bioinformatics applications. Her take on Latona’s platform is ‘An intelligent use of photoactivatable nanoparticle to kill cancer’s abode’. She is determined to cure cancer and control aging while being a full-time ninja."
 			},
 
@@ -114,6 +120,7 @@ console.log("indexAngJS.js file initiated...");
 				"last name" : "Olivio",
 				"nick name" : "",
 				"role" : "Regulatory Affairs",
+				"image": "Antonio.jpeg",
 				"biography" : "Antonio has over 12 years of experience in quality assurance, regulatory affairs and clinical research in the medical device industry.  He holds a Master’s Degree in Bioengineering (Cell and Tissue engineering) from the University of Illinois at Chicago and is currently completing his EMBA at the Booth School of Business with focus on general management and operations. In his time off Antonio enjoys traveling, reading and spending time with his family."
 			},
 
@@ -124,6 +131,7 @@ console.log("indexAngJS.js file initiated...");
 				"last name" : "Li",
 				"nick name" : "",
 				"role" : "Accounting/Finance",
+				"image": "Han.jpeg",
 				"biography" : "Han has 5 years of corporate finance experience in the healthcare industry and public accounting experience. He is attending the MBA program at University of Chicago with concentrations in Finance and Healthcare. He has a double B.S. degree in Accounting and Finance from the University of Texas at Dallas and was the Valedictorian. Han also enjoys reading, playing sports, and traveling."			
 			}												
 		}
@@ -135,9 +143,6 @@ console.log("indexAngJS.js file initiated...");
 
 		// click event function that brings up portrait when portrait is clicked
 		$scope.portraitClick = function(event){
-			console.log("Click logged");
-			console.log("clicked portrait is = " + event.target.id);
-
 			var targetedID = event.target.id;
 
 			resetPortrait();
@@ -158,7 +163,6 @@ console.log("indexAngJS.js file initiated...");
 
 			var newHeight = $aboutUsContainerHeight + $biographyHeight + 75;
 
-			console.log("new height = " + newHeight);
 			$($aboutUsContainer).css({"height" : newHeight +'px'});
 		}
 
@@ -177,14 +181,11 @@ console.log("indexAngJS.js file initiated...");
 			biographyReturn += "<h4 class = biography-content> Role: " + person["role"] + "</h4><br>";
 			biographyReturn += person["biography"];
 
-			console.log(biographyReturn);
-
 			return biographyReturn
 		};
 
 		$scope.portraitHoverOn = function(event){
 			var targetedID = event.target.id;
-			console.log("portraitHoverOn initiated!")
 			$($('#' + targetedID)).css({"border-color" : "green"})
 		};
 
@@ -203,7 +204,6 @@ console.log("indexAngJS.js file initiated...");
 				$($targetedElement).removeClass('expanded-portrait').addClass('bio-portrait');
 
 				$($bioPortraits).each(function(){
-					console.log("de-expanding portrait function is working")
 					$(this).removeClass('de-expanded-portrait')
 				})
 
@@ -227,8 +227,6 @@ console.log("indexAngJS.js file initiated...");
 			$('.bio-portrait').each(function(){
 				$(this).removeClass('de-expanded-portrait');
 			})
-
-			// $('.expanded-portrait').removeClass('expanded-portrait').addClass('bio-portrait');
 		};
 
 
@@ -257,6 +255,15 @@ console.log("indexAngJS.js file initiated...");
 
 			}
 
+		};
+
+		function loadPictures(){
+			$($bioPortraits).each(function(){
+				var $id = $(this).attr("id");
+				var imageUrl = "../../css/images/"+latonaTeamBios[$id]["image"];
+
+				$(this).css('background', 'url(' + imageUrl + ') no-repeat center');
+			})
 		};
 
 		/// function to reposition bio-portraits so they are in the center of the screen
@@ -319,6 +326,7 @@ console.log("indexAngJS.js file initiated...");
 		/// setups screen elements when window is first loaded
 		$( window ).ready(function(){
 			screenLoad();
+			loadPictures();
 		});
 	};
 
