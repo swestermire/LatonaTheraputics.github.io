@@ -73,7 +73,59 @@ console.log("indexAngJS.js file initiated...");
 				"last name" : "Chen",
 				"role" : "Strategy",
 				"biography" : "Meng has product marketing and systems engineering expertise from new product development programs in medical devices (in vitro diagnostics and peritoneal dialysis). He is attending the University of Chicago for his MBA, where he serves as a co-chair of the Healthcare Club and performs strategy consulting for a medical hospitality non-profit. He has a BS in Biomedical and Electrical/Computer Engineering from Duke. In his spare time, Meng enjoys playing piano, rock climbing, and watching as much Blue Devils basketball as possible."
-			}
+			},
+
+			p2 : {
+				"first name" : "Dylan",
+				"last name" : "Nichols",
+				"nick name" : "" ,
+				"role" : "Engineering",
+				"biography" : "Dylan has extensive experience in medical device development and manufacturing support for devices in various stages of their evolution. He also has experience with process development and scale up in a bio-pharmaceutical setting. Dylan earned his degree in Chemical Engineering from Northeastern University and is currently working towards a graduate degree in Biomedical Engineering at Illinois Institute of Technology. His ideal day off includes a game of pond hockey followed by ice fishing."
+			},
+
+			p3 : {
+				"first name" : "Yusheng" ,
+				"last name" : "He",
+				"nick name" : "",
+				"role" : "Research",
+				"biography" : "Yusheng He is a Ph.D. candidate in Biomedical Engineering at Illinois Institute of Technology. He has 4 years of research experience in synthetic biomaterials for tissue engineering and 2 years of experience in breast cancer research. In addition, Yusheng is also a co-inventor of a surgery training simulator device, and serves as science advisor role in that startup company. And his dog’s name is Uni."
+			},
+
+			p4 : {
+				"first name" : "Daniel",
+				"last name" : "Young",
+				"nick name" : "",
+				"role" : "Research",
+				"biography" : "Daniel Young is a graduate student with 8 years of experience in biomaterials and tissue engineering research. His dissertation includes synthesis and characterization of nanoparticles for bioactive factor delivery. Daniel enjoys the challenges and discovery of experimental design and applies it to his favorite hobby, cooking."
+			},
+
+			p5 : {
+				"first name" : "Aakanksha",
+				"last name" : "Rangnekar",
+				"nick name" : "",
+				"role" : "Engineering",
+				"biography" :  "Aakanksha holds a Masters degree in Biomedical Engineering from Illinois Institute of Technology. Her expertise lies in medical device engineering, biomarker discovery, imaging, cancer research and bioinformatics applications. Her take on Latona’s platform is ‘An intelligent use of photoactivatable nanoparticle to kill cancer’s abode’. She is determined to cure cancer and control aging while being a full-time ninja."
+			},
+
+			p6 : {
+				"first name" : "Antonio" ,
+				"middle name" : "",
+				"middle initial" : "M.",
+				"last name" : "Olivio",
+				"nick name" : "",
+				"role" : "Regulatory Affairs",
+				"biography" : "Antonio has over 12 years of experience in quality assurance, regulatory affairs and clinical research in the medical device industry.  He holds a Master’s Degree in Bioengineering (Cell and Tissue engineering) from the University of Illinois at Chicago and is currently completing his EMBA at the Booth School of Business with focus on general management and operations. In his time off Antonio enjoys traveling, reading and spending time with his family."
+			},
+
+			p7 : {
+				"first name" : "Han" ,
+				"middle name" : "",
+				"middle initial" : "",
+				"last name" : "Li",
+				"nick name" : "",
+				"role" : "Accounting/Finance",
+				"biography" : "Han has 5 years of corporate finance experience in the healthcare industry and public accounting experience. He is attending the MBA program at University of Chicago with concentrations in Finance and Healthcare. He has a double B.S. degree in Accounting and Finance from the University of Texas at Dallas and was the Valedictorian. Han also enjoys reading, playing sports, and traveling."			
+			}												
 		}
 
 		var $bioPortraits = $('.bio-portrait');
@@ -90,10 +142,25 @@ console.log("indexAngJS.js file initiated...");
 
 			resetPortrait();
 			expandPortrait(targetedID);
-			screenLoad();
-
 			updateBio(targetedID);
+
+			screenLoad();
 		};
+
+		function updateLatonaTeamRowHeight(){
+			var $aboutUsContainer = ("#about-us-container");
+			var $biography = (".biography");
+
+			$($aboutUsContainer).css({"height" : ""});
+
+			var $aboutUsContainerHeight = $($aboutUsContainer).outerHeight();
+			var $biographyHeight = $($biography).outerHeight();
+
+			var newHeight = $aboutUsContainerHeight + $biographyHeight + 75;
+
+			console.log("new height = " + newHeight);
+			$($aboutUsContainer).css({"height" : newHeight +'px'});
+		}
 
 		function updateBio(targetedID){
 			var targetedPerson = $("#"+targetedID);
@@ -106,8 +173,8 @@ console.log("indexAngJS.js file initiated...");
 		function biographyContentGenerator(targetedID){
 			var person = latonaTeamBios[targetedID];
 			
-			biographyReturn = "<h1>" + person["first name"] + ' ' + person["last name"] + "</h1><br>";
-			biographyReturn += "Role: " + person["role"] + "<br>";
+			biographyReturn = "<h3 class = biography-content>" + person["first name"] + ' ' + person["last name"] + "</h3><br>";
+			biographyReturn += "<h4 class = biography-content> Role: " + person["role"] + "</h4><br>";
 			biographyReturn += person["biography"];
 
 			console.log(biographyReturn);
@@ -239,6 +306,7 @@ console.log("indexAngJS.js file initiated...");
 		function screenLoad(){
 			centerAlignPortraits();
 			adjustBiographyPlacement();
+			updateLatonaTeamRowHeight();
 		}
 
 		/// adjusts elements when window is adjusted

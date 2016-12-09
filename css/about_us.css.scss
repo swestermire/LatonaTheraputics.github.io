@@ -58,15 +58,20 @@ no other pages*/
 
 .latona-team-row{
 	position: relative;
-	min-height: 1000px;   
+	padding-bottom: 0px;  
 }
 
 .biography{
 	margin-top: 50px;
-	padding: 10px 10px 10px 10px;
+	padding: 20px 20px 20px 20px;
 	border: 2px solid black;
 	border-radius: 10px;
 	width: 70%;
+}
+
+.biography-content{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 }
 
 .portrait-focused{
