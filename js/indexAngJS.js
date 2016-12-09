@@ -65,13 +65,24 @@ console.log("indexAngJS.js file initiated...");
 
 	aboutUsPortraitCtrl.$inject = ['$scope'];
 	function aboutUsPortraitCtrl($scope){
+
+		var latonaTeamBios = {
+			p1 : {
+				"first name" : "Meng-Yang",
+				"nick name" : "Meng",
+				"last name" : "Chen",
+				"role" : "Strategy",
+				"biography" : "Meng has product marketing and systems engineering expertise from new product development programs in medical devices (in vitro diagnostics and peritoneal dialysis). He is attending the University of Chicago for his MBA, where he serves as a co-chair of the Healthcare Club and performs strategy consulting for a medical hospitality non-profit. He has a BS in Biomedical and Electrical/Computer Engineering from Duke. In his spare time, Meng enjoys playing piano, rock climbing, and watching as much Blue Devils basketball as possible."
+			}
+		}
+
 		var $bioPortraits = $('.bio-portrait');
 		var $bioCollection = $('.portrait-collection');
 		var $latonaTeamTitle = $('#latona-team-title');
 		var $biography = $('.biography');
 
 		// click event function that brings up portrait when portrait is clicked
-		$scope.portraitFocus = function(event){
+		$scope.portraitClick = function(event){
 			console.log("Click logged");
 			console.log("clicked portrait is = " + event.target.id);
 
@@ -80,6 +91,39 @@ console.log("indexAngJS.js file initiated...");
 			resetPortrait();
 			expandPortrait(targetedID);
 			screenLoad();
+
+			updateBio(targetedID);
+		};
+
+		function updateBio(targetedID){
+			var targetedPerson = $("#"+targetedID);
+
+			biographyContent = biographyContentGenerator(targetedID);
+			$(".biography").text("");
+			$(".biography").append(biographyContent);
+		};
+
+		function biographyContentGenerator(targetedID){
+			var person = latonaTeamBios[targetedID];
+			
+			biographyReturn = "<h1>" + person["first name"] + ' ' + person["last name"] + "</h1><br>";
+			biographyReturn += "Role: " + person["role"] + "<br>";
+			biographyReturn += person["biography"];
+
+			console.log(biographyReturn);
+
+			return biographyReturn
+		};
+
+		$scope.portraitHoverOn = function(event){
+			var targetedID = event.target.id;
+			console.log("portraitHoverOn initiated!")
+			$($('#' + targetedID)).css({"border-color" : "green"})
+		};
+
+		$scope.portraitHoverOff = function(event){
+			var targetedID = event.target.id;
+			$($('#' + targetedID)).css({"border-color" : "red"})
 		};
 
 		/// expands portrait
@@ -97,6 +141,7 @@ console.log("indexAngJS.js file initiated...");
 				})
 
 			} else if ($($targetedElement).attr('class') != 'expanded-portrait') {
+				$('.expanded-portrait').removeClass("expanded-portrait").addClass('bio-portrait')
 				$targetedElement.removeClass('bio-portrait').addClass('expanded-portrait');
 				deExpandedPortrait();
 			};

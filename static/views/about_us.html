@@ -65,29 +65,44 @@
 			
 			<div class = portrait-collection>
 
+			<!-- Should create an ng-repeat to populate this stuff -->
+
 				<div id = p1 class = bio-portrait
-					 data-ng-click = portraitFocus($event) ></div>
+					 data-ng-click = portraitClick($event) 
+					 ng-mouseover = portraitHoverOn($event)
+					 ng-mouseleave = portraitHoverOff($event) ></div>
 
 				<div id = p2 class = bio-portrait
-					 data-ng-click = portraitFocus($event) ></div>
+					 data-ng-click = portraitClick($event)
+					 ng-mouseover = portraitHoverOn($event)
+					 ng-mouseleave = portraitHoverOff($event) ></div>
 
 				<div id = p3 class = bio-portrait
-					 data-ng-click = portraitFocus($event) ></div>
+					 data-ng-click = portraitClick($event) 
+					 ng-mouseover = portraitHoverOn($event)
+					 ng-mouseleave = portraitHoverOff($event) ></div>
 
 				<div id = p4 class = bio-portrait
-					 data-ng-click = portraitFocus($event) ></div>
+					 data-ng-click = portraitClick($event) 
+					 ng-mouseover = portraitHoverOn($event)
+					 ng-mouseleave = portraitHoverOff($event) ></div>
 
 				<div id = p5 class = bio-portrait
-					 data-ng-click = portraitFocus($event) ></div>
+					 data-ng-click = portraitClick($event) 
+					 ng-mouseover = portraitHoverOn($event)
+					 ng-mouseleave = portraitHoverOff($event) ></div>
 
 				<div id = p6 class = bio-portrait
-					 data-ng-click = portraitFocus($event) ></div>
+					 data-ng-click = portraitClick($event) 
+					 ng-mouseover = portraitHoverOn($event)
+					 ng-mouseleave = portraitHoverOff($event) ></div>
 
 			</div>
 
 			<!-- maybe can make an un-focus and focused state -->
 			<div class = portrait-unfocused></div>
 
+			<!-- maybe use a custom directive to bind click event to content update??? -->
 			<div class = biography>
 				Biography
 			</div>
