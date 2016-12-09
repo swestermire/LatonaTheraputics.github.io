@@ -79,19 +79,27 @@ console.log("indexAngJS.js file initiated...");
 
 			resetPortrait();
 			expandPortrait(targetedID);
-			deExpandedPortrait();
 			screenLoad();
 		};
 
 		/// expands portrait
 		function expandPortrait(targetedID){
-			$('#' + targetedID).removeClass('bio-portrait').addClass('expanded-portrait');
+			var $targetedElement = $('#' + targetedID);
 
-			// if ($($targetedElement).attr('class') === 'bio-portrait'){
-			// 	$targetedElement.removeClass('bio-portrait').addClass('expanded-portrait');
-			// } else if ($($targetedElement).attr('class') === 'expanded-portrait') {
-			// 	$targetedElement.addClass('bio-portrait').removeClass('expanded-portrait');
-			// };
+			// $('#' + targetedID).removeClass('bio-portrait').addClass('expanded-portrait');
+
+			if ($($targetedElement).attr('class') === 'expanded-portrait'){
+				$($targetedElement).removeClass('expanded-portrait').addClass('bio-portrait');
+
+				$($bioPortraits).each(function(){
+					console.log("de-expanding portrait function is working")
+					$(this).removeClass('de-expanded-portrait')
+				})
+
+			} else if ($($targetedElement).attr('class') != 'expanded-portrait') {
+				$targetedElement.removeClass('bio-portrait').addClass('expanded-portrait');
+				deExpandedPortrait();
+			};
 		};
 
 		/// de-expands portraits
@@ -103,11 +111,12 @@ console.log("indexAngJS.js file initiated...");
 
 		/// resets the status of the portraits
 		function resetPortrait(){
+
 			$('.bio-portrait').each(function(){
 				$(this).removeClass('de-expanded-portrait');
 			})
 
-			$('.expanded-portrait').removeClass('expanded-portrait').addClass('bio-portrait');
+			// $('.expanded-portrait').removeClass('expanded-portrait').addClass('bio-portrait');
 		};
 
 
