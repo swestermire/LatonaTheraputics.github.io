@@ -206,6 +206,7 @@ console.log("indexAngJS.js file initiated...");
 				$($bioPortraits).each(function(){
 					$(this).removeClass('de-expanded-portrait')
 				})
+				deExpandedPortrait();
 
 			} else if ($($targetedElement).attr('class') != 'expanded-portrait') {
 				$('.expanded-portrait').removeClass("expanded-portrait").addClass('bio-portrait')
