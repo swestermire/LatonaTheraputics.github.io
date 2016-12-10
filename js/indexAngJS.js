@@ -186,7 +186,7 @@ console.log("indexAngJS.js file initiated...");
 
 		$scope.portraitHoverOn = function(event){
 			var targetedID = event.target.id;
-			$($('#' + targetedID)).css({"border-color" : "lightgrey"})
+			$($('#' + targetedID)).css({"border-color" : "orange"})
 		};
 
 		$scope.portraitHoverOff = function(event){
@@ -276,8 +276,15 @@ console.log("indexAngJS.js file initiated...");
 			var numPortraits = $($bioPortraits).length;
 			var portraitWidth = $($bioPortraits).width();
 			var portraitBorder = parseFloat($($bioPortraits).css("border-right"));
-			
 			var portraitCollectionWidth = portraitMarginRight *(numPortraits-1) + numPortraits * portraitWidth + numPortraits*2*portraitBorder;
+			
+			if ($(".expanded-portrait").attr('id') != undefined){
+				// !!!! becareful with this 45... it's hard coded in and should be looked at.
+				portraitCollectionWidth += $("#" + $(".expanded-portrait").attr('id')).width()-45;
+				console.log("portraitCollectionWidth =" + portraitCollectionWidth)
+				console.log("parentWidth =" + parentWidth)	
+			}			
+			
 			var marginLeftPortraitCollection = (parentWidth - portraitCollectionWidth)/2;
 
 			$('.bio-portrait:first-child').css({'margin-left' : marginLeftPortraitCollection});
@@ -291,7 +298,6 @@ console.log("indexAngJS.js file initiated...");
 			var biographyHeight = function(){
 				var $portraitFocused = $(".expanded-portrait");
 
-				console.log("$portraitFocused  = " + $($portraitFocused).attr('class') )
 				if ($($portraitFocused).attr('class') != undefined){
 					return Math.abs($($bioPortraits).height() - $($portraitFocused).height());
 				} else {
