@@ -39,14 +39,14 @@ $(function(){
         "article type": "Patent ASDASDAS",
         "article content" : "YESHHH SHUFCK LONG AND SHUCK IT HARDDD!!!!"
          }
-         ,
+        //  ,
 
-         6 : {
-        "title" : "The Third Amazing Article Title",
-        "date" : "15-Jan-2017",
-        "article type": "Patent Release",
-        "article content" : "COPYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIRE!!! YING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYINGYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIRE"
-         }
+        //  6 : {
+        // "title" : "The Third Amazing Article Title",
+        // "date" : "15-Jan-2017",
+        // "article type": "Patent Release",
+        // "article content" : "COPYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIRE!!! YING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYINGYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIRE"
+        //  }
 
         }
   };
@@ -94,6 +94,8 @@ $(function(){
       });
     };
 
+
+
   // --- TIMELINE PAGE RENDER AND FUNCTIONALITY---------------------------------------------------
   // this will only execute once when document has been loaded.
   $( window ).ready(initialScreenLoad());
@@ -129,7 +131,7 @@ $(function(){
         // this will place articles in the left or right article column/collection depending on the amount of content
         // the current right and left article columns have
         
-        console.log('left is: '  + left)
+        // console.log('left is: '  + left)
 
         if (left){
           $articleCollectionLeft.append(msg);
@@ -152,8 +154,8 @@ $(function(){
           }
         }
 
-        console.log("last element: " + $($lastElement).attr('id'))
-        console.log("cumulative Left and Right Article Column Heights is: " + cumLeftArticleHeight + "/" + cumRightArticleHeight )
+        // console.log("last element: " + $($lastElement).attr('id'))
+        // console.log("cumulative Left and Right Article Column Heights is: " + cumLeftArticleHeight + "/" + cumRightArticleHeight )
         
         /// REPOSITION ARTICLES SO THEY ARE STAGGERED
         /// Checks the current article block and the previous article block to see what their height difference is
@@ -178,9 +180,17 @@ $(function(){
     $(function(){ // immediately invoked function
       $articleBlock = $(".article-block");
       $timelineGfx = $('.timeline-gfx');  
+      var articleBlocksSorted = [];
+
+      $articleBlock.each(function(){
+        articleBlocksSorted.push($(this).attr('id'))
+      })
+
+      console.log("Before - articleBlockSort = " + articleBlocksSorted)
+      articleBlocksSorted.sort()
+      console.log("After - articleBlockSort = " + articleBlocksSorted)
 
       $articleBlock.each(function(index){
-        
         var position = $(this).position();
         var divTags = divGenerator('timeline-circle', index)
         var $circleDiv = divTags[0] + divTags[1]
@@ -205,42 +215,51 @@ $(function(){
 
       var $articleBlock = $(".article-block");
       var $timelineGfx = $('.timeline-gfx');                                                           
-      var numArticles = $articleBlock.length
-      
-      var numRightArticles = numArticles/2;
-      var numLeftArticles = numArticles - numRightArticles;
-    
+
       var leftArticleBlocksTrace = [];
       var rightArticleBlocksTrace = [];
-      
+
       /// left article blocks
-      for ( arrayIdx = 0 ; arrayIdx < (numLeftArticles) ; arrayIdx++){
-        leftArticleBlocksTrace.push(arrayIdx)
-      }
+      var count = 0;
+      $($articleCollectionLeft).children().each(function(){
+        leftArticleBlocksTrace.push(count);
+        count++;
+      });
       
       /// right article blocks
-      for (arrayIdx = numLeftArticles; arrayIdx < (numRightArticles + numLeftArticles) ; arrayIdx++){
-        rightArticleBlocksTrace.push(arrayIdx)
-      }
+      $($articleCollectionRight).children().each(function(){
+        rightArticleBlocksTrace.push(count);
+        count++;
+      });
+
+      console.log("leftArticleBlocksTrace = " + leftArticleBlocksTrace);
+      console.log("rightArticleBlocksTrace =" + rightArticleBlocksTrace);
       
+      // defines the index of the top and bottom circle
       var idxTop = leftArticleBlocksTrace[0];
       var idxBot = rightArticleBlocksTrace[0];
       var leftTopState = true;
       
+      var numArticles = rightArticleBlocksTrace.length + leftArticleBlocksTrace.length;
       var arrayIdx = 0;
+
       for (iter = 1 ; iter < (numArticles) ; iter++){
         var $topCircle = $('#timeline-circle-' + idxTop);
         var $botCircle = $('#timeline-circle-' + idxBot);
-        
+        console.log("idxTop/idxBot = " + idxTop +"/"+ idxBot)
+      
+
         var topCircleHeight = $topCircle.height();
         var topCirclePosition = $topCircle.position();
         var botCirclePosition = $botCircle.position();
-        
+
         var timelinePositionTop = topCirclePosition.top + topCircleHeight;
         var timelineGfxLineHeight = Math.abs(botCirclePosition.top - timelinePositionTop - 2*userDefinedParams.marginTopBot);
         
         var timelinePositionLeft = parseFloat($topCircle.css("left")) + $topCircle.width()/2 - $('.timeline-vertical-line-gfx').width()/2
-        
+
+        console.log("timelinePositionTop = " + timelinePositionTop);
+
         var styleArray = {
           height: timelineGfxLineHeight + 'px',
           top: timelinePositionTop + 'px',
@@ -257,9 +276,15 @@ $(function(){
         
         // switches the numeric value of circle IDS to get the correct elements for the height and positioning calculations
         idxTop = idxBot;
+
         if (leftTopState){
           idxTop = idxBot;
           arrayIdx+=1;
+
+          if ($('#timeline-circle-' + idxTop).position().top < $('#timeline-circle-' + idxTop).position().top){
+
+          }
+
           idxBot = leftArticleBlocksTrace[arrayIdx];  
           leftTopState = false;
         }  else {
