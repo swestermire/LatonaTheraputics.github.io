@@ -91,7 +91,7 @@ console.log("indexAngJS.js file initiated...");
 				"last name" : "He",
 				"nick name" : "",
 				"role" : "Research",
-				"image":"YushengCropped.jpeg",
+				"image":"YushengCropped.jpg",
 				"biography" : "Yusheng He is a Ph.D. candidate in Biomedical Engineering at Illinois Institute of Technology. He has 4 years of research experience in synthetic biomaterials for tissue engineering and 2 years of experience in breast cancer research. In addition, Yusheng is also a co-inventor of a surgery training simulator device, and serves as science advisor role in that startup company. And his dog’s name is Uni."
 			},
 
@@ -100,7 +100,7 @@ console.log("indexAngJS.js file initiated...");
 				"last name" : "Young",
 				"nick name" : "",
 				"role" : "Research",
-				"image": "DanielCropped.jpeg",
+				"image": "DanielCropped.jpg",
 				"biography" : "Daniel Young is a graduate student with 8 years of experience in biomaterials and tissue engineering research. His dissertation includes synthesis and characterization of nanoparticles for bioactive factor delivery. Daniel enjoys the challenges and discovery of experimental design and applies it to his favorite hobby, cooking."
 			},
 
@@ -109,7 +109,7 @@ console.log("indexAngJS.js file initiated...");
 				"last name" : "Rangnekar",
 				"nick name" : "",
 				"role" : "Engineering",
-				"image": "",
+				"image": "AakankshaCropped.jpg",
 				"biography" :  "Aakanksha holds a Masters degree in Biomedical Engineering from Illinois Institute of Technology. Her expertise lies in medical device engineering, biomarker discovery, imaging, cancer research and bioinformatics applications. Her take on Latona’s platform is ‘An intelligent use of photoactivatable nanoparticle to kill cancer’s abode’. She is determined to cure cancer and control aging while being a full-time ninja."
 			},
 
@@ -120,7 +120,7 @@ console.log("indexAngJS.js file initiated...");
 				"last name" : "Olivio",
 				"nick name" : "",
 				"role" : "Regulatory Affairs",
-				"image": "Antonio.jpeg",
+				"image": "Antonio.jpg",
 				"biography" : "Antonio has over 12 years of experience in quality assurance, regulatory affairs and clinical research in the medical device industry.  He holds a Master’s Degree in Bioengineering (Cell and Tissue engineering) from the University of Illinois at Chicago and is currently completing his EMBA at the Booth School of Business with focus on general management and operations. In his time off Antonio enjoys traveling, reading and spending time with his family."
 			},
 
@@ -131,7 +131,7 @@ console.log("indexAngJS.js file initiated...");
 				"last name" : "Li",
 				"nick name" : "",
 				"role" : "Accounting/Finance",
-				"image": "Han.jpeg",
+				"image": "Han.jpg",
 				"biography" : "Han has 5 years of corporate finance experience in the healthcare industry and public accounting experience. He is attending the MBA program at University of Chicago with concentrations in Finance and Healthcare. He has a double B.S. degree in Accounting and Finance from the University of Texas at Dallas and was the Valedictorian. Han also enjoys reading, playing sports, and traveling."			
 			}												
 		}
@@ -186,12 +186,12 @@ console.log("indexAngJS.js file initiated...");
 
 		$scope.portraitHoverOn = function(event){
 			var targetedID = event.target.id;
-			$($('#' + targetedID)).css({"border-color" : "green"})
+			$($('#' + targetedID)).css({"border-color" : "lightgrey"})
 		};
 
 		$scope.portraitHoverOff = function(event){
 			var targetedID = event.target.id;
-			$($('#' + targetedID)).css({"border-color" : "red"})
+			$($('#' + targetedID)).css({"border-color" : "lightgrey"})
 		};
 
 		/// expands portrait
@@ -262,7 +262,9 @@ console.log("indexAngJS.js file initiated...");
 				var $id = $(this).attr("id");
 				var imageUrl = "../../css/images/"+latonaTeamBios[$id]["image"];
 
-				$(this).css('background', 'url(' + imageUrl + ') no-repeat center');
+				$(this).css({'background': 'url(' + imageUrl + ') no-repeat center center',
+							 'background-size' : "cover" });
+
 			})
 		};
 
