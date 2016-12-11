@@ -204,7 +204,7 @@ $(function(){
       })
   });
     
-    // !!! NEW FUNCTION
+
     //this function draws the vertical line graphics for the timeline
     $(function(){
 
@@ -212,83 +212,44 @@ $(function(){
         marginTopBot : 5 //this defines the distance between the circle dimension and vertical timeline gfx
       }
 
-      var $articleBlock = $(".article-block");
-      var $timelineGfx = $('.timeline-gfx');                                                           
+      var timelineCircles = $(".timeline-circle");
+      var timelineCircleClass = $(timelineCircles).attr('class');
 
-      var leftArticleBlocksTrace = [];
-      var rightArticleBlocksTrace = [];
+      var $topCircle
+      var $botCircle
+      $.each(timelineCircles, function(index){
+        if ($topCircle == undefined){
+          $topCircle = $("#" + timelineCircleClass + '-' + (index+1));
+        } else {
+          $botCircle = $("#" + timelineCircleClass + '-' + (index+1));
 
-      /// left article blocks
-      var count = 0;
-      $($articleCollectionLeft).children().each(function(){
-        leftArticleBlocksTrace.push(count);
-        count++;
-      });
-      
-      /// right article blocks
-      $($articleCollectionRight).children().each(function(){
-        rightArticleBlocksTrace.push(count);
-        count++;
-      });
+          var topCircleHeight = $topCircle.height();
+          var topCirclePosition = $topCircle.position();
+          var botCirclePosition = $botCircle.position();
 
-      console.log("leftArticleBlocksTrace = " + leftArticleBlocksTrace);
-      console.log("rightArticleBlocksTrace =" + rightArticleBlocksTrace);
-      
-      // defines the index of the top and bottom circle
-      var idxTop = leftArticleBlocksTrace[0];
-      var idxBot = rightArticleBlocksTrace[0];
-      var leftTopState = true;
-      
-      var numArticles = rightArticleBlocksTrace.length + leftArticleBlocksTrace.length;
-      var arrayIdx = 0;
+          var timelinePositionTop = topCirclePosition.top + topCircleHeight;
+          var timelineGfxLineHeight = Math.abs(botCirclePosition.top - timelinePositionTop - 2*userDefinedParams.marginTopBot);
+          
+          var timelinePositionLeft = parseFloat($topCircle.css("left")) + $topCircle.width()/2 - $('.timeline-vertical-line-gfx').width()/2
 
-      for (iter = 1 ; iter < (numArticles) ; iter++){
-        var $topCircle = $('#timeline-circle-' + idxTop);
-        var $botCircle = $('#timeline-circle-' + idxBot);
-        console.log("idxTop/idxBot = " + idxTop +"/"+ idxBot)
-      
-
-        var topCircleHeight = $topCircle.height();
-        var topCirclePosition = $topCircle.position();
-        var botCirclePosition = $botCircle.position();
-
-        var timelinePositionTop = topCirclePosition.top + topCircleHeight;
-        var timelineGfxLineHeight = Math.abs(botCirclePosition.top - timelinePositionTop - 2*userDefinedParams.marginTopBot);
-        
-        var timelinePositionLeft = parseFloat($topCircle.css("left")) + $topCircle.width()/2 - $('.timeline-vertical-line-gfx').width()/2
-
-        console.log("timelinePositionTop = " + timelinePositionTop);
-
-        var styleArray = {
-          height: timelineGfxLineHeight + 'px',
-          top: timelinePositionTop + 'px',
-          left: timelinePositionLeft + 'px',
-          "margin-top":  userDefinedParams.marginTopBot + 'px',
-          "margin-bottom" : userDefinedParams.marginTopBot + 'px'
+          var styleArray = {
+            height: timelineGfxLineHeight + 'px',
+            top: timelinePositionTop + 'px',
+            left: timelinePositionLeft + 'px',
+            "margin-top":  userDefinedParams.marginTopBot + 'px',
+            "margin-bottom" : userDefinedParams.marginTopBot + 'px'
+          }
+          
+          divTags = divGenerator('timeline-vertical-line-gfx', 
+                                 (index+1) , 
+                                 styleArray);
+          
+          $timelineGfx.append((divTags[0] + divTags[1]))
+          
+          // switches the bot circle to be the top circle for the next iteration
+          $topCircle = $botCircle
         }
-        
-        divTags = divGenerator('timeline-vertical-line-gfx', 
-                               iter , 
-                               styleArray);
-        
-        $timelineGfx.append((divTags[0] + divTags[1]))
-        
-        // switches the numeric value of circle IDS to get the correct elements for the height and positioning calculations
-        idxTop = idxBot;
-
-        if (leftTopState){
-          idxTop = idxBot;
-          arrayIdx+=1;
-          // if ($('#timeline-circle-' + idxTop).position().top < $('#timeline-circle-' + idxTop).position().top){
-          // }
-          idxBot = leftArticleBlocksTrace[arrayIdx];  
-          leftTopState = false;
-        }  else {
-          idxTop = idxBot;
-          idxBot = rightArticleBlocksTrace[arrayIdx]
-          leftTopState = true;  
-        }
-      }
+      })
       
       // readjusts timeline gfx positioning
       timelineGfxReadjust();
