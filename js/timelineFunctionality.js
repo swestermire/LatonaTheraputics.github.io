@@ -86,6 +86,7 @@ $(function(){
     return result;
   };
   
+  // readjusts the timeline vertical line gfx
   function timelineGfxReadjust(){
       $('.timeline-vertical-line-gfx').each(function(){
         var $topCircle = $('.timeline-circle');
@@ -130,8 +131,6 @@ $(function(){
         
         // this will place articles in the left or right article column/collection depending on the amount of content
         // the current right and left article columns have
-        
-        // console.log('left is: '  + left)
 
         if (left){
           $articleCollectionLeft.append(msg);
@@ -153,9 +152,6 @@ $(function(){
             left = true;
           }
         }
-
-        // console.log("last element: " + $($lastElement).attr('id'))
-        // console.log("cumulative Left and Right Article Column Heights is: " + cumLeftArticleHeight + "/" + cumRightArticleHeight )
         
         /// REPOSITION ARTICLES SO THEY ARE STAGGERED
         /// Checks the current article block and the previous article block to see what their height difference is
@@ -190,19 +186,22 @@ $(function(){
       articleBlocksSorted.sort()
       console.log("After - articleBlockSort = " + articleBlocksSorted)
 
-      $articleBlock.each(function(index){
-        var position = $(this).position();
-        var divTags = divGenerator('timeline-circle', index)
-        var $circleDiv = divTags[0] + divTags[1]
-        $timelineGfx.append($circleDiv)
+      $.each(articleBlocksSorted, function(index){
+        console.log("This / index = " + this + "/" + index);
+        var $specificElement = $("#" + this);
+        var position = $($specificElement).position();
+        var divTags = divGenerator('timeline-circle' , (index+1));
+        var $circleDiv = divTags[0] + divTags[1];
+        $timelineGfx.append($circleDiv);
 
-        // this repositions the timeline-circles
-        $(".timeline-circle").last().css(
-          {top: position.top, 
-           left: "45%", 
-           position: "absolute"})
+        //this repositions the timeline-circles
+        $(".timeline-circle").last().css({
+          top: position.top,
+          left: "45%",
+          position : "absolute"
+        });
 
-      });
+      })
   });
     
     // !!! NEW FUNCTION
@@ -280,11 +279,8 @@ $(function(){
         if (leftTopState){
           idxTop = idxBot;
           arrayIdx+=1;
-
-          if ($('#timeline-circle-' + idxTop).position().top < $('#timeline-circle-' + idxTop).position().top){
-
-          }
-
+          // if ($('#timeline-circle-' + idxTop).position().top < $('#timeline-circle-' + idxTop).position().top){
+          // }
           idxBot = leftArticleBlocksTrace[arrayIdx];  
           leftTopState = false;
         }  else {
@@ -296,9 +292,9 @@ $(function(){
       
       // readjusts timeline gfx positioning
       timelineGfxReadjust();
-      });  
+      });
   };
-  
+
   $( window ).resize(function(){
     // changes background color of body
     // $body.css('background-color' , "red");
