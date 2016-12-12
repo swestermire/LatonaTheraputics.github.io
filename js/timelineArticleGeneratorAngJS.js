@@ -23,9 +23,9 @@ console.log("timelineArticleGeneratorAngJS initiated...");
 				console.log("key/value = " + key + "/" + value);
 			})
 
-			$scope.date = data["2016"]["1"]["date"]
-			$scope.title = data["2016"]["1"]["date"]
-			$scope.articleContent = data["2016"]["1"]["date"]
+			$scope.date = data.2016.1.date;
+			$scope.title = data["2016"]["1"]["title"]
+			$scope.articleContent = data["2016"]["1"]["article content"]
 
 		})
 
