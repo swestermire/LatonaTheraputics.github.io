@@ -10,6 +10,8 @@ console.log("indexAngJS.js file initiated...");
 	app.controller('appendHeaderAndFooter' , appendHeaderAndFooterCtrl);
 	app.controller('aboutUsPortraits' , aboutUsPortraitCtrl);
 
+
+	// angularJS router function does not work currently...
 	app.config(function($routeProvider){
 		console.log("Route Function Hit... ");
 		$routeProvider

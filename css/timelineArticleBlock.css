@@ -1,60 +1,19 @@
-body {
-  background-color: white;
-  position: relative;
-  padding-top: 200px;
-}
-
-.timeline-gfx{
-  position: absolute;
-  width: 30%;
-  height: 500px;
-  background-color: rgba(100,100,100,0.5);
-  left: 35%;
-}
-
-.timeline-vertical-line-gfx{
-  position: absolute;
-  width: 15px;
-  border-radius: 15px;
-  background-color: purple;
-}
-
-.timeline-circle{
-  background-color: green;
-  height: 40px;
-  width: 40px;
-  border-radius: 50px;
-}
-
-.article-collection-left{
-  position: absolute;
-  width: 30%;
-  left: 15%;
-  background-color: rgb(100, 100, 100);
-}
-
-.article-collection-right{
-  position: absolute;
-  padding-top: 75px;
-  width: 30%;
-  right: 15%;
-  background-color: pink;
-}
-
-.article-block{
-  border: 2px solid black;
-  padding: 10px 10px 10px 10px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-}
-/*
 .article-block-container{
   position: absolute;
-  top: 120%;
+  top: 10%;
   left: 15%;
 }
 
-.article-carrot-gfx{
+.article-left-carrot-gfx{
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+  border-right:10px solid orange; 
+}
+
+.article-right-carrot-gfx{
   position: absolute;
   top: 2.5%;
   right: -2%;
@@ -63,7 +22,7 @@ body {
   height: 0; 
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-left: 10px solid orange;
+  /*border-left: 10px solid orange;*/
 }
 
 .article-block-gfx{
@@ -116,4 +75,4 @@ body {
   right: 2%;
   top: 0%;
   padding-top: 10px;
-}*/
+}
