@@ -23,6 +23,9 @@ console.log("timelineArticleGeneratorAngJS initiated...");
 				console.log("key/value = " + key + "/" + value);
 			})
 
+
+			// this will be updated to store all article data which will be used accessed using ng-repeat. 
+			// i think that makes the most sense... right now just tring to get the base case to work.
 			$scope.date = data["2016"]["1"]["date"]
 			$scope.title = data["2016"]["1"]["title"]
 			$scope.articleContent = data["2016"]["1"]["article content"]
