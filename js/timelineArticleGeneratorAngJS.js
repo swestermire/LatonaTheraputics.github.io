@@ -16,9 +16,16 @@ console.log("timelineArticleGeneratorAngJS initiated...");
 		/// this is using jquery's ajax request to get locally stored JSON file. There's also an angJS way
 		$.getJSON("../public/timelineEvents.json" , function(data){
 			console.log("blahblahblah")
+			var items = []
+
+			//year iteration
 			$.each(data, function(key, value){
 				console.log("key/value = " + key + "/" + value);
 			})
+
+			$scope.date = data["2016"]["1"]["date"]
+			$scope.title = data["2016"]["1"]["date"]
+			$scope.articleContent = data["2016"]["1"]["date"]
 
 		})
 
