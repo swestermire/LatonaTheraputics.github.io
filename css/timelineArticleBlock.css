@@ -29,7 +29,8 @@
   position: relative;
   margin-bottom: 200px;
   height: 280px;
-  width: 30vw;
+  max-width: 30vw;
+  min-width: 400px;
 
   border-top: 1px solid darkorange;
   border-bottom: 1px solid lightgrey;
