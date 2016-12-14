@@ -13,7 +13,7 @@ console.log("timelineArticleGeneratorAngJS initiated...");
 
 		// !! AngJS implementation of JSON get request
 		$http.get('../public/timelineEvents.json').success(function(data){
-			$scope.articleDataYear = data;
+			$scope.articleDataYear = data["2016"];
 			console.log(data["2016"])
 		})
 

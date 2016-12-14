@@ -10,17 +10,17 @@
 
 <section ng-app = timelineArticleGenerator>
   <div class = article-block-container,
-       ng-controller = articleGenerator>
+        ng-repeat = "entry in articleDataYear">
 
     <div class = article-right-carrot-gfx>
     </div>
     <div class = article-block-gfx>
 
       <div class = article-block-header-gfx> 
-        <p> <b> {{title}} </b> </p>
-        <p class = header-date> {{date}} </p>
+        <p> <b> {{entry["title"]}} </b> </p>
+        <p class = header-date> {{entry["date"]}} </p>
       </div>
-      <div class = article-block-content-gfx> {{ articleContent }}</div>
+      <div class = article-block-content-gfx> {{ entry["articleContent"] }}</div>
       <div class = article-block-footer-gfx>
 
         <!-- need to update with angularJS $scope value for img source--> 
