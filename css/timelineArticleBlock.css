@@ -28,7 +28,7 @@
 .article-block-gfx{
   position: relative;
   margin-bottom: 200px;
-  height: 280px;
+  min-height: 100px;
   max-width: 30vw;
   min-width: 400px;
 
