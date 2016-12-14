@@ -13,8 +13,8 @@ console.log("timelineArticleGeneratorAngJS initiated...");
 
 		// !! AngJS implementation of JSON get request
 		$http.get('../public/timelineEvents.json').success(function(data){
-			console.log("ding your $http worked!")
-			console.log(data)
+			$scope.articleDataYear = data;
+			console.log(data["2016"])
 		})
 
 	// !!! This is the jquery implementation but does not have the callback function also bad
