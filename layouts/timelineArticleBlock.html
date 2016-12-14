@@ -9,26 +9,28 @@
 
 
 <section ng-app = timelineArticleGenerator>
-  <div class = article-block-container,
-        ng-repeat = "entry in articleDataYear">
+  <section ng-controller = articleGenerator>
+    <div class = article-block-container,
+          ng-repeat = "entry in articleDataYear">
 
-    <div class = article-right-carrot-gfx>
-    </div>
-    <div class = article-block-gfx>
-
-      <div class = article-block-header-gfx> 
-        <p> <b> {{entry["title"]}} </b> </p>
-        <p class = header-date> {{entry["date"]}} </p>
+      <div class = article-right-carrot-gfx>
       </div>
-      <div class = article-block-content-gfx> {{ entry["articleContent"] }}</div>
-      <div class = article-block-footer-gfx>
+      <div class = article-block-gfx>
 
-        <!-- need to update with angularJS $scope value for img source--> 
-        <img class = article-class-img
-             src = "../css/images/rocketyShipIcon.png"> </img>
-        Product Launch!
+        <div class = article-block-header-gfx> 
+          <p> <b> {{entry["title"]}} </b> </p>
+          <p class = header-date> {{entry["date"]}} </p>
+        </div>
+        <div class = article-block-content-gfx> {{ entry["articleContent"] }}</div>
+        <div class = article-block-footer-gfx>
+
+          <!-- need to update with angularJS $scope value for img source--> 
+          <img class = article-class-img
+               src = "../css/images/rocketyShipIcon.png"> </img>
+          Product Launch!
+        </div>
+      
       </div>
-    
     </div>
-  </div>
+  </section>
 </section>
