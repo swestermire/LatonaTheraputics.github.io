@@ -114,7 +114,7 @@ $(function(){
     var articleYearDivTag = function(idName = "", index){
         var elementTag = "<div id =" + idName + " class = article-block> <b>Article Element Year</b>: " + index + "<br>";
         return elementTag};
-      
+        
       var left = true;
       var cumRightArticleHeight = parseFloat($(".article-collection-right").css("padding-top"));
       var cumLeftArticleHeight = parseFloat($(".article-collection-left").css("padding-top"));
@@ -122,6 +122,7 @@ $(function(){
       
       $.each(this, function(index){
         idName = idBase + index;
+        
         msg = articleYearDivTag(idName, index);
         msg += "<b>Article Element:</b> " + index + "<br>";
         msg += "<b>Title:</b> " + this["title"] + "<br>";
@@ -129,8 +130,8 @@ $(function(){
         msg += "<b>Article Type:</b> " + this['article type'] + "<br>";
         msg += "<b>Article Content:</b> " + this['article content'] + "<br></div>";
         
-        // this will place articles in the left or right article column/collection depending on the amount of content
-        // the current right and left article columns have
+        this will place articles in the left or right article column/collection depending on the amount of content
+        the current right and left article columns have
 
         if (left){
           $articleCollectionLeft.append(msg);
