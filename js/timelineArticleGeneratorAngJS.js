@@ -13,6 +13,7 @@ console.log("timelineArticleGeneratorAngJS initiated...");
 
 		// !! AngJS implementation of JSON get request
 		$http.get('../public/timelineEvents.json').success(function(data){
+			console.log("ding your $http worked!")
 			console.log(data)
 		})
 
