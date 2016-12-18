@@ -12,19 +12,19 @@ console.log("indexAngJS.js file initiated...");
 
 
 	// angularJS router function does not work currently...
-	app.config(function($routeProvider){
-		console.log("Route Function Hit... ");
-		$routeProvider
+	// app.config(function($routeProvider){
+	// 	console.log("Route Function Hit... ");
+	// 	$routeProvider
 		
-		.when("/", {
-			templateUrl : "../index.html"
-		})
+	// 	.when("/", {
+	// 		templateUrl : "../index.html"
+	// 	})
 
-		.when("/LatonaHome", {
-			templateUrl : "../static/views/latonaTheraputicsHome.html"
-		})
+	// 	.when("/LatonaHome", {
+	// 		templateUrl : "../static/views/latonaTheraputicsHome.html"
+	// 	})
 
-	});
+	// });
 
 	indexGeneralFunctionsCtrl.$inject = ["$scope"];
 	function indexGeneralFunctionsCtrl($scope){

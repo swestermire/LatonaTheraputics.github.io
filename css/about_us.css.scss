@@ -9,13 +9,14 @@ no other pages*/
 	background-color: green;
 }
 
-.container-odd{
-	background-color: white;
+
+/*!!! Probablhy should move this styles.css.scss !!!*/
+section {
+	padding: 30px 15px 30px 15px;
 }
 
-.container{
-	padding-top: 30px;
-	padding-bottom: 30px;
+.container-odd{
+	background-color: white;
 }
 
 #latona-team-title{

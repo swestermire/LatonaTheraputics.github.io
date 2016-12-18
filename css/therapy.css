@@ -1,0 +1,297 @@
+/*####################################################
+THERAPY CSS
+#####################################################*/
+#therapy-banner-pic{
+    position: relative;
+    opacity: .80;
+    background:url('images/chicago_skyline 1500 x 938.jpeg')no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+    margin-top:0px;
+    padding: 0 0 0 0;
+    height: 750px;
+    width: 100%;
+    background-color: black;
+}
+
+.how-tech-works-img{
+  float: left;
+  width: 40vw;
+  height: 40vw;
+  max-height: 600px;
+  max-width: 600px;
+  min-width: 250px;
+  min-height: 250px;
+  background-color: green;
+  background:url('images/techDiagram.png') no-repeat center center;
+  background-size: contain;
+}
+
+.how-tech-works-content{
+  float:left;
+}
+
+.therapy-particle-content{
+  float:left;
+  margin-right: 50px;
+}
+
+.therapy-particle-img{
+  float: left;
+  height: 25vw;
+  width: 25vw;
+  min-height: 400px;
+  min-width: 400px;
+  background:url('images/particleProfileCropped.jpg') no-repeat center center;
+  background-size: contain;
+}
+
+.therapy-content-lnk{
+  text-align: center;
+}
+
+@media(max-width: 1300px){
+  .how-tech-works-content{
+  font-size: 16px;
+  }
+
+  .therapy-particle-content{
+    font-size: 16px;
+  }
+}
+
+@media(min-width: 1301px){
+  .how-tech-works-content{
+    font-size: 20px;
+  }
+
+  .therapy-particle-content{
+    font-size: 20px;
+  }
+}
+
+/*
+#how-tech-works{
+  margin-top: 25px;
+  margin-bottom: 100px;
+  padding-bottom: 50px;
+  position: relative;
+  background-color: white;
+
+  
+  #how-tech-works-img{
+    position: absolute;
+    background:url('images/techDiagram.png') no-repeat center center;
+    background-size: contain;
+
+    @media (min-width: 1600px){
+      margin-left: 100px;
+      margin-top: 50px;
+      left: 10%;
+      top: 10px;
+      height: 30vw;
+      width: 30vw;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1599px){
+      height: 40vw;
+      width: 40vw;
+      top: 7%;
+      left: 7%;
+    }
+
+    @media(min-width: 901px) and (max-width: 1199px){
+      background-color:lightgrey;
+      top: 7%;
+      left: 7%;
+      height: 40vw;
+      width: 40vw;
+    }
+
+    @media(max-width: 900px){
+      top: 100px;
+      height: 40vw;
+      width: 40vw;
+      left: 100px;
+      background-color:pink;
+    }
+  }
+
+  #how-tech-works-content{
+    position: absolute;
+    left: 50%;
+    max-width: 35vw;
+    margin-top: 8%;
+  }
+
+  h3 {
+    margin-left: 20%;
+    font-size: 42px;
+    margin-bottom: 25px;
+  }
+
+  li {
+    font-size: 32px;
+  }
+
+  #therapy-content-lnk{
+    font-size: 24px;
+    margin-left: 30%;
+    margin-top: 25px;
+    text-decoration: underline;
+    border: 3px solid black;
+    padding: 15px 15px 15px 15px;
+    border-radius: 15px; 
+    width: 160px;  
+  }
+  a{
+    color:black;
+
+    :hover{
+      background-color: grey;
+    }
+  }
+}
+
+#therapy-flow{
+  position: relative;
+  margin-top: 25px;
+
+    @media(min-width: 500px) and (max-width: 992px){
+      height: 550px;
+    }
+
+    @media(min-width: 993px) and (max-width: 1200px){
+      height: 550px;
+
+    }
+
+    @media (min-width: 1201px){
+    }
+
+  #therapy-flow-content{
+    text-align: left;
+
+    @media(min-width: 1201px){
+      margin-top: 12.5%;
+      margin-left: 75px;
+    }
+
+    @media(min-width: 993px) and (max-width: 1200px){
+      margin-top: 0px;
+      text-align: center;
+      width: 100vw;
+    }
+
+    @media(max-width: 992px){
+      margin-top: 0%;
+      text-align: center;
+      width: 100vw;
+      background-color: yellow;
+    }
+
+
+    h3{
+      font-size: 32px;
+    }
+
+  }
+
+  #therapy-flow-img{
+    
+    @media (min-width: 500px) and (max-width: 992px){
+      margin-top: 2%;
+      margin-left:5%;
+      height: 40vw;
+      width: 100%;
+    }
+
+    @media(min-width: 993px) and (max-width: 1200px){
+      margin-top: 2%;
+      margin-left: 15%;
+      width: 70%;
+      height: 50vw;
+
+    }
+
+    @media (min-width: 1201px){
+      margin-top: 5%;
+      margin-left: 5%;
+      width: 50%;
+      height: 30vw;
+    }
+
+    @media (max-width: 970px){
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+    }
+    background: url('therapyFlow.png') no-repeat;
+    background-size: contain;
+  }
+}
+
+#CAD-section{
+  height: 700px;
+  position: relative;
+
+  #CAD-img{
+    position: absolute;
+    left: 10%;
+    width: 30vw;
+    height: 30vw;
+    top: 50px;
+    background-color: darkgrey;
+  }
+
+  #CAD-content{
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    max-width: 30vw;
+    h3 {
+      font-size: 32px;
+    }
+  }
+}
+
+
+
+#breast-cancer-chart{
+  height: 700px;
+  position: relative;
+
+  #breast-cancer-chart-content{
+    position: absolute;
+    left: 9%;
+    top: 100px;
+    max-width: 30vw;
+
+    h3 {
+      font-size: 32px;
+    }
+
+    li {
+      font-size: 24px;
+    }
+  }
+
+  #breast-cancer-chart-img{
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    height: 35vw;
+    width: 35vw;
+    background: url('images/breastCancerGraph.png') no-repeat;
+    background-size: contain;
+  }
+}
+
+.section-title{
+  text-align: center;
+}
+
+#patient-benefit{
+  text-align: center;
+}

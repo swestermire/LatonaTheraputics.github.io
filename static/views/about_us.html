@@ -1,23 +1,24 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<link rel = 'stylesheet' type = text/css href = ../../css/styles.css.scss>
+<link rel = 'stylesheet' type = "text/css" href = "../../css/styles.css.scss">
 
-<link rel = 'stylesheet' type = text/css href = ../../css/about_us.css.scss>
+<link rel = 'stylesheet' type = "text/css" href = "../../css/about_us.css.scss">
 
 <script src = "../../js/jquery-3.1.1.min.js"></script>
 
-<script src = ../../js/angular.min.js> </script>
+<script src = "../../js/angular.min.js"> </script>
 
 <script src = "../../js/angular.route.min.js"> </script>
 
 <script src = "../../js/indexAngJS.js"></script>
 
-<html ng-app = indexApp>
+<html ng-app = "indexApp">
 
 
 <!-- this adds the header into the page -->
-<header ng-controller = appendHeaderAndFooter><body class = header></body></header>
+<header ng-controller = "appendHeaderAndFooter"><body class = "header"></body></header>
 
+<!-- page banner -->
 <section class = "container-fluid banner">
 	<div class = "row">
 
@@ -30,8 +31,8 @@
 
 <section class = >
 	<section class = "container-fluid container-odd">
-		<section class = container>
-			<div class = row>
+		<section class = "container">
+			<div class = "row">
 				<h1> Mission Statement </h1>
 				<div>
 				Our mission is to use light-activated chemotherapy
@@ -59,14 +60,14 @@
 </section>
 
 <section class = >
-	<section id = about-us-container 
-			 ng-controller = aboutUsPortraits 
-			 class = container>
+	<section id = "about-us-container"
+			 ng-controller = "aboutUsPortraits" 
+			 class = "container">
 			 
 		<div class = "latona-team-row row">
-			<h1 id = latona-team-title> The Latona Team </h1>
+			<h1 id = "latona-team-title"> The Latona Team </h1>
 			
-			<div class = portrait-collection>
+			<div class = "portrait-collection">
 
 			<!-- Should create an ng-repeat to populate this stuff -->
 
@@ -100,18 +101,18 @@
 					 ng-mouseover = portraitHoverOn($event)
 					 ng-mouseleave = portraitHoverOff($event) ></div>
 
-<!-- 				<div id = p7 class = bio-portrait
+				<div id = p7 class = bio-portrait
 					 data-ng-click = portraitClick($event) 
 					 ng-mouseover = portraitHoverOn($event)
-					 ng-mouseleave = portraitHoverOff($event) ></div> -->
+					 ng-mouseleave = portraitHoverOff($event) ></div>
 
 			</div>
 
 			<!-- maybe can make an un-focus and focused state -->
-			<div class = portrait-unfocused></div>
+			<div class = "portrait-unfocused"></div>
 
 			<!-- maybe use a custom directive to bind click event to content update??? -->
-			<div class = biography>
+			<div class = "biography">
 				Our eclectic team of engineers, researchers, buisnesses people are teh best in the world and they rock.  Rock your socks off! 
 			</div>
 		
@@ -119,14 +120,14 @@
 	</section>
 </section>
 
-<section class = container-even>
-	<section class = container>
-		<section class = row>
-			<h1 id = latona-team-title> The Latona Advisors </h1>
+<section class = "container-even">
+	<section class = "container">
+		<section class = "row">
+			<h1 id = "latona-team-title"> The Latona Advisors </h1>
 		</section>
 	</section>
 </section>
 
-<footer ng-controller = appendHeaderAndFooter><body class = footer></body></footer>
+<footer ng-controller = "appendHeaderAndFooter"><body class = "footer"></body></footer>
 </html>
 

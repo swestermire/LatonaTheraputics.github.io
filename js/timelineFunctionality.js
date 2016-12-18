@@ -130,8 +130,8 @@ $(function(){
         msg += "<b>Article Type:</b> " + this['article type'] + "<br>";
         msg += "<b>Article Content:</b> " + this['article content'] + "<br></div>";
         
-        this will place articles in the left or right article column/collection depending on the amount of content
-        the current right and left article columns have
+        // this will place articles in the left or right article column/collection depending on the amount of content
+        // the current right and left article columns have
 
         if (left){
           $articleCollectionLeft.append(msg);
