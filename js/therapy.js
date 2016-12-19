@@ -10,6 +10,10 @@ $(function(){
 	var $therapyParticleContent = $(".therapy-particle-content");
 	var $therapyParticleImg = $('.therapy-particle-img');
 
+	var userParams = {
+		"widthTransition" : 1050
+	}
+
 	// SCREEN FUNCTIONS SECTION
 	function initialScreenLoad(){
 		console.log("initialScreenLoad function initiated...")
@@ -34,6 +38,7 @@ $(function(){
 	};
 
 	function screenAdjust(){
+		console.log("windowWidth = " + $(window).outerWidth());
 		var elementsHeightCenterAdjust = [$howTechWorksContent,
 										  $therapyParticleContent]
 
@@ -49,48 +54,59 @@ $(function(){
 		for (element in elementsWidthCenterAdjust){
 			adjustWidthToCenter(elementsWidthCenterAdjust[element]);
 		};
-	}
+	}	
 
 	function adjustHeightToCenter(element){
+		if ($(window).outerWidth() <= userParams["widthTransition"]){
+			$(element).css({"margin-top" : 0});
+			return
+		}
+
 		var elementHeight = $(element).outerHeight();
 		var parentElementHeight = $(element).parent().outerHeight();
 
 		// Eqn Below: heightDiff/2 to get top offset
 		var topOffset = (parentElementHeight - elementHeight)/2;
 		$(element).css({"margin-top" : topOffset});
+		
 	};
 
 	function adjustWidthToCenter(element){
+
 		var $parentElement = $(element).parent();
 		var $parentElementChildren = $($parentElement).children();
+		var $parentElementWidth = $($parentElement).outerWidth();
 
 		// iterates through children of parent to determine overall content width
 		var overallContentWidth = 0;
+		var transitionState = false;
 		$($parentElementChildren).each(function(){
-			overallContentWidth += $(this).outerWidth();
+			if ($(window).outerWidth() <= userParams["widthTransition"]){
+				var leftOffset = ($parentElementWidth - $(this).outerWidth())/2;
+				$(this).css({"margin-left" : leftOffset});
+				transitionState = true;
+			} else {
+				overallContentWidth += $(this).outerWidth();
+				$(this).css({"margin-left" : 0});
+			}
 		})
 
-		var $parentElementWidth = $($parentElement).outerWidth();
-
 		// Eqn Below: Calc leftOffset by taking (parent element width - content width)/2
-		var leftOffset = ($parentElementWidth - overallContentWidth)/2
-	
-		$($parentElementChildren[0]).css({"margin-left" : leftOffset}); 
+		if (transitionState == false){
+			var leftOffset = ($parentElementWidth - overallContentWidth)/2
+			$($parentElementChildren[0]).css({"margin-left" : leftOffset});
+		} 
 	}
 
 	// function that manages website behavior when page is first loaded
 	$(window).ready(function(){
-		if ($(window).outerWidth() >= 950){
-			initialScreenLoad();
-		}
+		initialScreenLoad();
 	});
 
 	// function that manages website behavior when page is adjusted
 	$(window).resize(function(){
 		console.log("resize function initiated...")
-		if ($(window).outerWidth() >= 950){
-			screenAdjust();
-		}
+		screenAdjust();
 	});
 
 })();

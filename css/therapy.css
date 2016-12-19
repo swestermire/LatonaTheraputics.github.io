@@ -36,14 +36,15 @@ THERAPY CSS
 .therapy-particle-content{
   float:left;
   margin-right: 50px;
+  font-family: Comic Sans;
 }
 
 .therapy-particle-img{
   float: left;
   height: 25vw;
   width: 25vw;
-  min-height: 400px;
-  min-width: 400px;
+  min-height: 250px;
+  min-width: 250px;
   background:url('images/particleProfileCropped.jpg') no-repeat center center;
   background-size: contain;
 }
