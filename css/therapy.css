@@ -16,6 +16,10 @@ THERAPY CSS
     background-color: black;
 }
 
+.how-tech-works{
+  min-height: 1000px;
+}
+
 .how-tech-works-img{
   float: left;
   width: 40vw;
@@ -31,12 +35,16 @@ THERAPY CSS
 
 .how-tech-works-content{
   float:left;
+  margin-left: 50px;
+}
+
+.therapy-particle{
+  min-height: 1000px;
 }
 
 .therapy-particle-content{
   float:left;
   margin-right: 50px;
-  font-family: Comic Sans;
 }
 
 .therapy-particle-img{
@@ -45,7 +53,7 @@ THERAPY CSS
   width: 25vw;
   min-height: 250px;
   min-width: 250px;
-  background:url('images/particleProfileCropped.jpg') no-repeat center center;
+  background:url('images/smallparticleProfileCropped.png') no-repeat center center;
   background-size: contain;
 }
 
@@ -71,6 +79,26 @@ THERAPY CSS
   .therapy-particle-content{
     font-size: 20px;
   }
+}
+
+.therapy-flow{
+  min-height: 1000px;
+}
+
+.therapy-flow-img{
+  float: left;
+  height: 25vw;
+  width: 40vw;
+  min-height: 350px;
+  min-width: 750px;
+  background: url("images/therapyWorkflow.png") no-repeat center center;
+  background-size: contain;
+}
+
+.therapy-flow-content{
+  float:left;
+  margin-right: 100px;
+  max-width: 350px;
 }
 
 /*

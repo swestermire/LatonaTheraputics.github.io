@@ -9,6 +9,8 @@ $(function(){
 	var $therapyParticle = $('.therapy-particle');
 	var $therapyParticleContent = $(".therapy-particle-content");
 	var $therapyParticleImg = $('.therapy-particle-img');
+	var $therapyFlowContent = $('.therapy-flow-content');
+	var $therapyFlowImg = $(".therapy-flow-img");
 
 	var userParams = {
 		"widthTransition" : 1050
@@ -20,10 +22,15 @@ $(function(){
 
 		// elements needing to be adjusted.
 		var elementsHeightCenterAdjust = [$howTechWorksContent,
-										  $therapyParticleContent]
+										  $therapyParticleContent,
+										  $therapyFlowContent,
+										  $howTechWorksImg,
+										  $therapyParticleImg,
+										  $therapyFlowImg]
 
 		var elementsWidthCenterAdjust = [$howTechWorksImg,
-										 $therapyParticleImg]
+										 $therapyParticleImg,
+										 $therapyFlowImg ]
 
 		// iterates through elements needing adjustments for centering height
 		for (element in elementsHeightCenterAdjust){
@@ -40,10 +47,15 @@ $(function(){
 	function screenAdjust(){
 		console.log("windowWidth = " + $(window).outerWidth());
 		var elementsHeightCenterAdjust = [$howTechWorksContent,
-										  $therapyParticleContent]
+										  $therapyParticleContent,
+										  $therapyFlowContent,
+										  $howTechWorksImg,
+										  $therapyParticleImg,
+										  $therapyFlowImg]
 
 		var elementsWidthCenterAdjust = [$howTechWorksImg,
-										 $therapyParticleImg]
+										 $therapyParticleImg,
+										 $therapyFlowImg ]
 
 		// iterates through elements needing adjustments for centering height
 		for (element in elementsHeightCenterAdjust){
