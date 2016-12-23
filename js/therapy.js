@@ -12,6 +12,8 @@ $(function(){
 	var $therapyFlowContent = $('.therapy-flow-content');
 	var $therapyFlowImg = $(".therapy-flow-img");
 
+	// hardcoded! (not great).  Point at which the sites collapses 
+	// into one column and is organized through jquery
 	var userParams = {
 		"widthTransition" : 1050
 	}

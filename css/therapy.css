@@ -16,14 +16,15 @@ THERAPY CSS
     background-color: black;
 }
 
-.how-tech-works{
-  min-height: 1000px;
+.therapy-section-title-typg{
+  font-family: "Helvetica Rounded";
+  font-size: 42px;
 }
 
 .how-tech-works-img{
   float: left;
-  width: 40vw;
-  height: 40vw;
+  width: 32vw;
+  height: 32vw;
   max-height: 600px;
   max-width: 600px;
   min-width: 250px;
@@ -31,20 +32,18 @@ THERAPY CSS
   background-color: green;
   background:url('images/techDiagram.png') no-repeat center center;
   background-size: contain;
+  margin-right: 50px;
 }
 
 .how-tech-works-content{
   float:left;
-  margin-left: 50px;
-}
-
-.therapy-particle{
-  min-height: 1000px;
+  width: 550px;
 }
 
 .therapy-particle-content{
   float:left;
   margin-right: 50px;
+  width: 570px;
 }
 
 .therapy-particle-img{
@@ -55,10 +54,6 @@ THERAPY CSS
   min-width: 250px;
   background:url('images/smallparticleProfileCropped.png') no-repeat center center;
   background-size: contain;
-}
-
-.therapy-content-lnk{
-  text-align: center;
 }
 
 @media(max-width: 1300px){
@@ -81,6 +76,24 @@ THERAPY CSS
   }
 }
 
+/*userParams["widthTransition"] in therapy.js is the reason for this transition
+... not the best... i know*/
+@media(min-width: 1051px){
+  .how-tech-works { 
+    min-height: 1000px;
+  }
+  .therapy-particle{
+    min-height: 1000px;
+  }
+}
+
+@media(max-width: 1050px){
+  .how-tech-works {
+  }
+  .therapy-particle{
+  }
+}
+
 .therapy-flow{
   min-height: 1000px;
 }
@@ -89,15 +102,15 @@ THERAPY CSS
   float: left;
   height: 25vw;
   width: 40vw;
-  min-height: 350px;
-  min-width: 750px;
+  min-height: 300px;
+  min-width: 550px;
   background: url("images/therapyWorkflow.png") no-repeat center center;
   background-size: contain;
 }
 
 .therapy-flow-content{
   float:left;
-  margin-right: 100px;
+  margin-right: 50px;
   max-width: 350px;
 }
 
