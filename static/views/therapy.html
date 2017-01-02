@@ -17,10 +17,13 @@
 	<script src = "../../js/therapy.js"></script>
 
 	<script src = "../../js/indexAngJS.js"></script>
+
+	<script src = "../../js/LatonaTheraputicsGeneral.js"></script>
+	
 </head>
 
 
-<html class = typog-1 ng-app = "indexApp">
+<html ng-app = "indexApp">
 
 <!-- this adds the header into the page -->
 <header ng-controller = "appendHeaderAndFooter"><body class = "header"></body></header>
@@ -43,9 +46,9 @@
 
 		
 		<div class = "how-tech-works-content"> 
-				<h2 class = "therapy-section-title-typg"> How does the technology work? </h2>
+				<h2 class = "therapy-section-title-typg"> How does our technology work? </h2>
 
-				<p class = therapy-section-content-typg> 
+				<p class = "therapy-section-typg"> 
 				Inactive drug-encapsulated liposal nanoparticles are
 				utilized and activated by near infrared (NRI) light to generate reactive oxygen species (ROS) to release encapuslated drug from the liposome
 				</p>
@@ -57,7 +60,7 @@
 			</ul> -->
 
 			<div class = "therapy-content-lnk">
-				<a href = 'https://www.google.com/patents/WO2015006429A1?cl=en'> Learn More </a>
+					<button id = "learn-more-link" href = 'https://www.google.com/patents/WO2015006429A1?cl=en'> Learn More </button>
 			</div>
 
 		</div>
@@ -70,22 +73,14 @@
 
 		<div class = "therapy-particle-content"> 
 
-			<h2 class = "therapy-section-title-typg"> Stylized Theraputics "Kill Zone"</h2>
+			<h2 class = "therapy-section-title-typg ssection-typg-color"> Stylized Theraputics "Kill Zone"</h2>
 
-			<p class = therapy-section-content-typg>
+			<p class = "therapy-section-typg section-typg-color">
 				<b> Red Area </b>: Near-infrared light activation causes photo-activation of liposomes <br>
 				
 				<b> Orange Area </b> : Reactive Oxygen specices extend slightly beyond <br>
 
 				<b> Green Area </b>: ????
-
-<!-- 			<ul>
-				<li><b> Red Area </b>: Near-infrared light activation causes photo-activation of liposomes <br></li>
-				
-				<li><b> Orange Area </b> : Reactive Oxygen specices extend slightly beyond <br></li>
-
-				<li> <b> Green Area </b>: </li>
-			</ul> -->
 			</p>
 		</div>
 
@@ -99,9 +94,9 @@
 
 		<div class = "therapy-flow-content">
 			<h2 class = "therapy-section-title-typg"> How we treat cancer </h2> 
-			<h4> The work flow has only 3 steps
+			<p class = "therapy-section-typg"> The work flow has only 3 steps
 			It should take only a few hours, 
-			and should cause minimal side effects </h4>
+			and should cause minimal side effects </p>
 		</div>
 
 		<div class = "therapy-flow-img col-lg-8 col-md-12 col-sm-12 col-xs-12"></div>

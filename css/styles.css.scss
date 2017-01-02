@@ -18,12 +18,10 @@
 
 /*Background Color Themes*/
 .bkg-color-1{
-  background-color: rgb(250,180,0);
+  background-color: #FF9800;
 }
 
 /*typography*/
-.typog-1{
-}
 
 h2{
   font-size: 40px;
@@ -122,83 +120,20 @@ p{
   }
 }
 
-/*about us page*/
-/*about-us personal tiles*/
-
-.person-row{
-  padding: 25px 0 25px 0;
-  margin-left: 10vw;
-  > h1 {
-    margin:0 auto;
-    margin-bottom: 25px;
-  }
-
-  > #person-tile-row{
-    #person1 {
-      background: url("images/NiceGermanScientistSquare.jpg") no-repeat center center;
-      background-size: contain;
-    }
-
-    #person2 {
-      background: url("images/MengYangChenPortrait.jpg") no-repeat center center;
-      background-size: contain;
-    }
-
-    .person-tile{
-      position: relative;
-      padding: 1vw 1vw 1vw 1vw;
-      border: 1px solid black;
-      height: 10vw;
-      width: 10vw;
-      margin-right: 1vw;
-      float: left;
-      border-radius: 5px;
-      overflow: hidden;
-
-      > p {
-        position: absolute;
-        margin: 0 0 0 0;
-        bottom: 0%;
-        width: 100%;
-        left: 0%;
-        background-color: rgba(240,240,240,0.8);
-        text-align: center;
-
-        :hover {
-          color: red;
-        }
-      }
-    }
-  }
-}
-.on-set{
-  background-color: white !important;
-}
-
-.off-set{
-  position: relative;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
 //Header//
 /* navbar */
 
 #website-header{
-  background-color: rgb(255,255,255);
-  margin: auto;
-  /* border-bottom: 5px solid black; */
-  color: rgb(50,50,50);
-  font-family: "Verdana";
-  height: 200px;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  /*margin: auto;*/
+/*  color: rgb(50,50,50);
+  font-family: "Verdana";*/
 }
 
-#collapsed-header-btns{
+.collapsed-header-btns{
 
   font-size: 16px;
   margin-top: 150px;
+  transition: margin 0.5s;
   
   @media(min-width: 750px){
     right: 2%;
@@ -211,32 +146,12 @@ p{
   }
 }
 
-/*@media (max-width: 990px) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin: 7.5px -15px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-}*/
+.deExpanded-collapsed-header-btns{
+
+  font-size: 16px !important;
+  margin-top: 100px !important;
+
+}
 
 .page_list{
   margin: auto;
@@ -250,19 +165,24 @@ div {
   margin-top:50px;
 }
 
-#logo-img {
+.logo-img {
   float:left;
   margin-top: 10px;
   width: 425px;
   height: 150px;
   background: url('images/latonaLogo850x300.png') no-repeat;
-  background-size: cover;
+  background-size: contain;
+  transition: height 0.5s;
+}
+
+.deExpanded-logo-img {
+  height: 120px !important;
 }
 
 .navbar-default {
     background-color:   rgb(255, 255, 254);
-    border-color:   rgb(255, 255, 255);
-    
+    border-color:   #FF5722;
+    border-bottom-width: 5px;
 } 
 
 /*//main page media query for background image//*/
@@ -332,7 +252,7 @@ div {
   font-size: 30px;
 }
 
-#about_us_header_picture{
+#about_us_header_picture {
   position: relative;
   width: 100%;
   text-align: center;
