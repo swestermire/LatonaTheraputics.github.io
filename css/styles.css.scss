@@ -234,8 +234,13 @@ div {
 }
 
 /*//Footer//*/
-#footer_creator {
-  text-align:right;
+.footer {
+  /*background-color: #F57C00;*/
+  background-color: #FFE0B2;
+  /*color: #FFE0B2;*/
+  color: black;
+  height: 20px;
+  border-top: 3px solid darkorange;
 }
 
 /*//Main Page Typography//*/

@@ -1,5 +1,5 @@
 <head>
-
+	<title> Latona Therapy </title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<!-- <link rel = 'stylesheet' type = "text/css" href = "../../css/bootstrap.min.css"> -->
@@ -24,9 +24,10 @@
 
 
 <html ng-app = "indexApp">
+<div ng-controller = "appendHeaderAndFooter">
 
 <!-- this adds the header into the page -->
-<header ng-controller = "appendHeaderAndFooter"><body class = "header"></body></header>
+<body class = "header"></body>
 
 <!-- page banner -->
 <secion class = "container-fluid">
@@ -60,7 +61,7 @@
 			</ul> -->
 
 			<div class = "therapy-content-lnk">
-					<button id = "learn-more-link" href = 'https://www.google.com/patents/WO2015006429A1?cl=en'> Learn More </button>
+					<a id = "learn-more-link" href = 'https://www.google.com/patents/WO2015006429A1?cl=en'> Learn More </a>
 			</div>
 
 		</div>
@@ -73,9 +74,9 @@
 
 		<div class = "therapy-particle-content"> 
 
-			<h2 class = "therapy-section-title-typg ssection-typg-color"> Stylized Theraputics "Kill Zone"</h2>
+			<h2 class = "therapy-section-title-typg section-typg2-color"> Stylized Theraputics <span class = "keyword"> Kill Zone </span></h2>
 
-			<p class = "therapy-section-typg section-typg-color">
+			<p class = "therapy-section-typg section-typg2-color">
 				<b> Red Area </b>: Near-infrared light activation causes photo-activation of liposomes <br>
 				
 				<b> Orange Area </b> : Reactive Oxygen specices extend slightly beyond <br>
@@ -104,43 +105,23 @@
 	</div>
 </section>
 
-<!-- <section class = "on-set container-fluid">
 
-	<div class = "row off-row">
-		<h1 class = "section-title"> Our Target: Triple-Negative Breast Cancer (TNBC) </h1>
+<section>
+	<div class = "container-fluid">
+		<div class = "patient-benefit bkg-color-1 section-typg2-color row">
+			<div class = " therapy-section-typg patient-benefit-content">
+				 <p class = "therapy-section-title-typg"> How will patients benefit </p>
+				 <p class = "therapy-section-title-typg"> Safety </p>
+				 <p> Fewer side effects -> faster recovery time between treatment sessions </p>
+				 <p class = "therapy-section-title-typg"> Efficacy </p>
+				 <p> More lethal kill zone at site of tumor -> better chance of surgery success, lower change of recurrence </p>
+			</div>
+		 </div>
 	</div>
+</section>
 
-<div id = "breast-cancer-chart" class = "row off-row">
-	<div id = "breast-cancer-chart-img"> </div>
-	<div id = "breast-cancer-chart-content"> 
-	<h3> What is TNBC? </h3>
-	<ul>
-		<li> 10-20% of breast cancer cases, but far lower survivle rate </li>
-		<li> More aggressive and likely to recur </li>
-		<li> No FDA-approved targeted therapies </li>
-	</ul>
+<!-- This generates the footer -->
+<footer class = "footer"></footer>
 
-	<h3> Here's an example of what a patient went through following diagnosis</h3>
-	<ul>
-		<li> 6 rounds of ACT chemo </li>
-		<li> lumpectomy + lymph node surgery </li>
-		<li> 33 radiation treatments </li>
-		<li> 8 months Xeloda chemo </li>
-	</ul>
-	</div>
 </div>
-</section>
-
-<section class = "container-fluid">
-	<div id = "patient-benefit" class = "row">
-		<h3> How will patients benefit? </h3>
-		<h4> fewer side effects and complications -> faster recovery time between treatment sessions </h4>
-		<h3> Efficacty </h3>
-		<h4> More lethal kill zone at site of tumor -> better changes of surgery success, lower chance of recurrence </h4>
-	</div>
-</section>
-
-
-
-<footer ng-controller = "appendHeaderAndFooter"><body class = "footer"></body></footer>
 </html>

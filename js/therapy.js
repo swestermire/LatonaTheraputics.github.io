@@ -11,6 +11,8 @@ $(function(){
 	var $therapyParticleImg = $('.therapy-particle-img');
 	var $therapyFlowContent = $('.therapy-flow-content');
 	var $therapyFlowImg = $(".therapy-flow-img");
+	var $patientBenefitContent = $(".patient-benefit-content")
+
 
 	// hardcoded! (not great).  Point at which the sites collapses 
 	// into one column and is organized through jquery
@@ -122,6 +124,12 @@ $(function(){
 		console.log("resize function initiated...")
 		screenAdjust();
 	});
+
+	/// EVENT HANDLERS ///
+	// click event
+
+
+	
 
 })();
 //END OF CODE

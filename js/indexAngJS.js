@@ -58,6 +58,7 @@ console.log("indexAngJS.js file initiated...");
 
 			// adds the footer
 			$.get("../../layouts/footer.html" , function(data){
+				console.log("data = " + data)
 				$(".footer").append(data);
 			})
 
