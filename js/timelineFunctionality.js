@@ -3,6 +3,20 @@ $(function(){
   var $body = $("body");
   var $articleCollectionLeft = $(".article-collection-left");
   var $articleCollectionRight = $(".article-collection-right");
+  
+  var $timelineBlockLayoutLeft = function(){
+
+    console.log("KABLAMM!!!");
+    
+    $.ajax("../../layouts/timelineArticleBlock.html" , 
+              {success: function(result){
+                console.log(result);
+                $("#article-block-left").html(result);
+    }});
+
+    console.log("returned ajax data is = " + content);
+  }();
+
   var $articleElements = {
     "2016" : {
         1 : {

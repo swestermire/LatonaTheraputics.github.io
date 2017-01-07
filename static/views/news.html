@@ -1,9 +1,11 @@
-<head> 
+<head>
+	<title> Latona News </title>
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<link rel = 'stylesheet' type = "text/css" href = "../../css/styles.css.scss">
 
-	<link rel = 'stylesheet' type = text/css href = ../../css/news.css>
+	<link rel = 'stylesheet' type = "text/css" href = "../../css/news.css">
 
 	<script src = "../../js/jquery-3.1.1.min.js"></script>
 
@@ -18,20 +20,26 @@
 	<script src = "../../js/LatonaTheraputicsGeneral.js"></script>
 </head>
 
-<html ng-app = indexApp>
+<html ng-app = "indexApp">
+<div ng-controller = "appendHeaderAndFooter">
 
+	<!-- this adds the header into the page -->
+	<header class = "header"></header>
 
-<!-- this adds the header into the page -->
-<header ng-controller = "appendHeaderAndFooter"><body class = "header"></body></header>
+	<div class = "latona-news">
+		<section class = "container-fluid">
+			<body class = "row">
+			  <div class = "article-collection-left"></div>
+			  
+			  <div class = "timeline-gfx"></div>
+			  
+			  <div class = "article-collection-right"></div>
+			</body>
+		</section>
+	</div>
 
-<body>
-  <div class = "article-collection-left"> </div>
-  
-  <div class = "timeline-gfx">
-  </div>
-  
-  <div class = "article-collection-right"></div>
-</body>
-
-<footer ng-controller = "appendHeaderAndFooter"><body class = "footer"></body></footer>
+	<!-- this adds footer -->
+	<!-- <footer class = "footer"></footer> -->
+	
+</div>
 </html>

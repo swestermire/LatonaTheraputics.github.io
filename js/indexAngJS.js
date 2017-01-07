@@ -29,7 +29,7 @@ console.log("indexAngJS.js file initiated...");
 	indexGeneralFunctionsCtrl.$inject = ["$scope"];
 	function indexGeneralFunctionsCtrl($scope){
 		var fullDate = new Date();
-		$scope.date = fullDate.getMonth() + '-' + fullDate.getDate() + '-' + fullDate.getFullYear();
+		$scope.date = (fullDate.getMonth()+1) + '-' + fullDate.getDate() + '-' + fullDate.getFullYear();
 
 		$scope.projectList = {
 			LatonaTheraputics : {
@@ -52,13 +52,11 @@ console.log("indexAngJS.js file initiated...");
 			
 			// adds the header
 			$.get("../../layouts/header.html", function(data){
-				console.log('invoked function in appendHeaderAndFooter');
 				$(".header").append(data);
 			})
 
 			// adds the footer
 			$.get("../../layouts/footer.html" , function(data){
-				console.log("data = " + data)
 				$(".footer").append(data);
 			})
 
