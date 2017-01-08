@@ -4,18 +4,29 @@ $(function(){
   var $articleCollectionLeft = $(".article-collection-left");
   var $articleCollectionRight = $(".article-collection-right");
   
+  // AJAX REQUEST
   var $timelineBlockLayoutLeft = function(){
 
     console.log("KABLAMM!!!");
     
     $.ajax("../../layouts/timelineArticleBlock.html" , 
-              {success: function(result){
-                console.log(result);
-                $("#article-block-left").html(result);
+              {success: function(data){
+                // console.log($(data).html());
+                // console.log($(data).find("#article-block-left").html());
+                console.log($(data).filter("#article-block-left").html());
+                articleBlockLeftGfxGen(data);
     }});
 
-    console.log("returned ajax data is = " + content);
   }();
+
+  function articleBlockLeftGfxGen(data){
+    console.log("Start of Ajax ArticleBlockLeftGfxGeneration");
+    
+    $('.article-collection-left').children().each(function(data){
+      console.log('left article detected...')
+    })
+
+  };
 
   var $articleElements = {
     "2016" : {
@@ -197,12 +208,12 @@ $(function(){
         articleBlocksSorted.push($(this).attr('id'))
       })
 
-      console.log("Before - articleBlockSort = " + articleBlocksSorted)
+      // console.log("Before - articleBlockSort = " + articleBlocksSorted)
       articleBlocksSorted.sort()
-      console.log("After - articleBlockSort = " + articleBlocksSorted)
+      // console.log("After - articleBlockSort = " + articleBlocksSorted)
 
       $.each(articleBlocksSorted, function(index){
-        console.log("This / index = " + this + "/" + index);
+        // console.log("This / index = " + this + "/" + index);
         var $specificElement = $("#" + this);
         var position = $($specificElement).position();
         var divTags = divGenerator('timeline-circle' , (index+1));
