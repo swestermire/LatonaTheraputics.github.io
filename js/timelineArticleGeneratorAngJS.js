@@ -9,70 +9,44 @@ console.log("timelineArticleGeneratorAngJS initiated...");
 	var app = angular.module("timelineArticleGenerator", [])
 
 	app.controller("articleGenerator" , articleGeneratorCtrl);
+	app.controller("appendHeaderAndFooter" , appendHeaderAndFooterCtrl);
 
 	// this is what dynamically serves up information displayed on article blocks
 	articleGeneratorCtrl.$inject = ['$scope' , '$http'];
 	function articleGeneratorCtrl($scope, $http){
 
+		$scope.titleAlt = "Alternate Title Block";
+
 		// !! AngJS implementation of JSON get request
-		$http.get('../../public/timelineEvents.json').success(function(data){
-			$scope.articleDataYear = data["2016"];
-			console.log(data["2016"])
+		$http.get('../../public/timelineEvents.json').success(function(response){
+			$scope.timelineEventsData = response;
 		})
 
-		// html partial for the article block layout
-		$scope.articleTemplate = {
-			url : "../../layouts/timelineArticleBlock.html",
-			test : $http.get("../../layouts/timelineArticleBlock.html").success(function(data){
-				return data
-			})
-		};
-
-		// (function(){
-		// 	console.log("function is working...")
-			
-		// 	// adds the header
-		// 	$.get("../../layouts/header.html", function(data){
-		// 		console.log('invoked function in appendHeaderAndFooter');
-		// 		$(".header").append(data);
-		// 	})
-
-		// 	// adds the footer
-		// 	$.get("../../layouts/footer.html" , function(data){
-		// 		$(".footer").append(data);
-		// 	})
-
-		// })();
+		$http.get('../../layouts/timelineArticleBlock.html').success(function(response){
+			$scope.articleBlockLeftTemplate = $(response).filter("#article-block-left").html();
+			$scope.articleBlockRightTemplate = $(response).filter("#article-block-right").html();
+		})
 
 		};
 
-	// !!! This is the jquery implementation but does not have the callback function also bad
-	// practice to use jquery with angJS... i know...
-	// (function(){
-	// 	console.log("iffe working!")
-	// 	/// this is using jquery's ajax request to get locally stored JSON file. There's also an angJS way
-	// 	$.getJSON("../public/timelineEvents.json" , function(data){
-	// 		console.log("blahblahblah")
-	// 		var items = []
+	// controller to fetch header and footer template
+	appendHeaderAndFooterCtrl.$inject = ["$scope" , "$templateRequest", "$compile"];
+	function appendHeaderAndFooterCtrl($scope, $templateRequest, $compile){
+		console.log("appendHeaderAndFooterCtrlHit!")
 
-	// 		//year iteration
-	// 		$.each(data, function(key, value){
-	// 			console.log("key/value = " + key + "/" + value);
-	// 		})
+		//manual way of injectign header and footer template into DOM. Using directives is more elegant solution
+		$templateRequest("../../layouts/header").then(function(template){
+			$scope.headerTemplate = template;
+			$compile($("#header").html(template).contents());
+		})
 
+		$templateRequest("../../layouts/footer").then(function(template){
+			$scope.footerTemplate = template
+			$compile($("#footer").html(template).contents());
+		})
 
-	// 		// this will be updated to store all article data which will be used accessed using ng-repeat. 
-	// 		// i think that makes the most sense... right now just tring to get the base case to work.
-	// 		$scope.date = data["2016"]["1"]["date"]
-	// 		$scope.title = data["2016"]["1"]["title"]
-	// 		$scope.articleContent = data["2016"]["1"]["article content"]
-
-	// 	})
-
-	// })();
-
-		// This could be a way as well???
-		
-	// }
+		//using angularJS directives to perform the same operation above
+		//!!!! NEED TO FINISH IMPLEMENTING THE ABOVE FUNCTION USING DIRECTIVES!!!!//
+	};
 
 })();

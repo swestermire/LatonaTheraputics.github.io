@@ -1,7 +1,9 @@
 {
-"2016" : {
     "1" : {
     "title" : "The Amazing Article Title",
+    "year" : "2016",
+    "month" : "Nov",
+    "day" : "29", 
     "date" : "29-NOV-2016",
     "article type": "Product Release",
     "article content" : "This is the article content, it is quite impressive an spectacular"
@@ -9,6 +11,9 @@
   
     "2" : {
     "title" : "The Second Amazing Article Title",
+    "year" : "2017",
+    "month" : "Jan",
+    "day" : "15", 
     "date" : "15-Jan-2017",
     "article type": "Patent Release",
     "article content" : "This is an article to show how amazing my JS code is.  Too awesome!!! "
@@ -16,6 +21,9 @@
   
     "3" : {
     "title" : "The Third Amazing Article Title",
+    "year" : "2017",
+    "month" : "Jan",
+    "day" : "15",     
     "date" : "15-Jan-2017",
     "article type": "Patent Release",
     "article content" : "COPYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIRE!!! YING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYINGYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIRE"
@@ -23,6 +31,9 @@
   
     "4" : {
     "title" : "AND ANOTHER AMAZING FEATUREEEE!!!!!!!!",
+    "year" : "2017",
+    "month" : "Jan",
+    "day" : "15", 
     "date" : "15-Jan-2017",
     "article type": "Patent Release",
     "article content" : "YESHHH SHUFCK LONG AND SHUCK IT HARDDD!!!!"
@@ -30,7 +41,10 @@
 
     "5" : {
     "title" : "SPARLAGH ASD L DK ASD  SADSAD",
-    "date" : "1230-Jan-2020",
+    "year" : "2020",
+    "month" : "Jan",
+    "day" : "30", 
+    "date" : "30-Jan-2020",
     "article type": "Patent ASDASDAS",
     "article content" : "YESHHH SHUFCK LONG AND SHUCK IT HARDDD!!!!"
      }
@@ -38,11 +52,12 @@
 
     "6" : {
     "title" : "The Third Amazing Article Title",
-    "date" : "15-Jan-2017",
+    "year" : "2021",
+    "month" : "Jan",
+    "day" : "15", 
+    "date" : "15-Jan-2021",
     "article type": "Patent Release",
     "article content" : "COPYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIRE!!! YING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYINGYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIREYING CODE MY ASS THIS IS ALL OG ORIGINAL SHIET FROM THE MIND OF STEVEN TADASHI WESTERMIRE"
      }
-
-    }
 }
   

@@ -1,35 +1,11 @@
+// this really should be refactored using angularJS
+
 $(function(){
   
   var $body = $("body");
   var $articleCollectionLeft = $(".article-collection-left");
   var $articleCollectionRight = $(".article-collection-right");
   
-  // AJAX REQUEST
-  var $timelineBlockLayoutLeft = function(){
-
-    console.log("KABLAMM!!!");
-    
-    $.ajax("../../layouts/timelineArticleBlock.html" , 
-              {success: function(data){
-                // console.log($(data).html());
-                // console.log($(data).find("#article-block-left").html());
-                console.log($(data).filter("#article-block-left").html());
-                articleBlockLeftGfxGen(data);
-
-                
-    }});
-
-  }();
-
-  function articleBlockLeftGfxGen(data){
-    console.log("Start of Ajax ArticleBlockLeftGfxGeneration");
-    
-    $('.article-collection-left').children().each(function(data){
-      console.log('left article detected...')
-    })
-
-  };
-
   var $articleElements = {
     "2016" : {
         1 : {
@@ -129,7 +105,35 @@ $(function(){
   $( window ).ready(initialScreenLoad());
   
   function initialScreenLoad(){
-    
+      var articleBlockTemplateURL = "../..layouts/timelineArticleBlock.html";
+      // AJAX REQUEST - This fetches the article block template
+
+      var $timelineBlockLayoutLeft = function(){
+        
+        $.ajax(articleBlockTemplateURL , 
+                  {success: function(data){
+
+                    // console.log($(data).filter("#article-block-left").html());
+
+                    var articleBlockLeftTemplate = $(data).filter("#article-block-left").html();
+                    var articleBlockRighTemplate = $(data).filter("#article-block-right").html();
+
+                    // Pass to article generating functions
+
+                    generateArticleElements(articleBlockLeftTemplate, 
+                                            articleBlockRighTemplate);
+        }});
+
+      }();
+
+    // This function takes in article templates and creates article elements in the DOM
+    function generateArticleElements(articleBlockLeftTemplate, articleBlockRighTemplate){
+      // input? Need to know the number of articles
+      var $secondToLast
+      var
+
+    }
+
     // initially draws all the articles on to the page taking info from JS object
     var $secondToLast /// this tracks the last element
     var idIdx = 0;

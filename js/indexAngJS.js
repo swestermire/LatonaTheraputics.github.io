@@ -1,5 +1,7 @@
 // this will be the ng app for the index page
 
+'use strict'
+
 console.log("indexAngJS.js file initiated...");
 
 (function(){

@@ -1,0 +1,39 @@
+<head>
+	<title> Latona News </title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel = 'stylesheet' type = "text/css" href = "../../css/styles.css.scss">
+
+	<link rel = 'stylesheet' type = "text/css" href = "../../css/news.css">
+
+	<script src = "../../js/jquery-3.1.1.min.js"></script>
+
+	<script src = "../../js/angular.min.js"> </script>
+
+	<script src = "../../js/angular.route.min.js"> </script>
+
+	<script src = "../../js/latonaTheraputicsAngJS.js"></script>
+
+</head>
+
+<html ng-app = "latonaTheraputicsAngJS">
+
+<div ng-controller = "appendHeaderAndFooter">
+
+	<!-- this adds the header into the page -->
+	<header id = "header"></header>
+
+	<div ng-controller = "articleGenerator">
+		<h1> Number of Entries = {{totEntries}} </h1>
+		<div ng-repeat = "entry in timelineEventsData">
+			<div ng-class-odd = "'articleLeft'"> </div>
+			<div ng-class-even = "'articleRight'"> </div>
+		</div>
+	</div>
+
+	<!-- this adds footer -->
+	<footer id = "footer"></footer>
+	
+</div>
+</html>
