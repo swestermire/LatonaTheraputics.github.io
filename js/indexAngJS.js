@@ -38,6 +38,11 @@ console.log("indexAngJS.js file initiated...");
 				title : "Latona Theraputics Website",
 				version : "1.521v",
 				href : "static/views/latonaTheraputicsHome.html"
+			},
+			angularJSPlay : {
+				title: "AngularJS Play",
+				version: "1.0",
+				href: "AngularJSPlay/views/static/index.html"
 			}
 		};
 

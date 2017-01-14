@@ -1,0 +1,31 @@
+<head>
+	<title> AngularJS Play </title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<script src = "../../js/angular.min.js"> </script>
+
+	<script src = "../../js/angular.route.min.js"> </script>
+
+	<script src = "../../js/AngularJSFile.js"></script>
+</head>
+
+<html ng-app = "angularJSPlayApp">
+	<section ng-controller = "wordBank">
+
+		<h1> Basic NG-repeat functionality </h1>
+		<h2 ng-repeat = "item in items">
+			name: {{item.name}} ; qty: {{ item["quantity"]}}
+		</h2>
+
+		<!-- Currently not working -->
+		<h1> {{title}} </h1>
+		<get-template></get-template>
+
+	</section>
+
+	<section ng-controller = "windowResizeFunctionality">
+		<h1> {{ title }} </h1>
+		<resize-window-functionality></resize-window-functionality>
+	</section>
+</html>
