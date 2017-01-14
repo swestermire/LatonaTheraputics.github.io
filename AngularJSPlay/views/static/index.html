@@ -8,15 +8,19 @@
 	<script src = "../../js/angular.route.min.js"> </script>
 
 	<script src = "../../js/AngularJSFile.js"></script>
+
+	<link rel="stylesheet" href = "../../css/generalStyling.css"></link>
 </head>
 
 <html ng-app = "angularJSPlayApp">
-	<section ng-controller = "wordBank">
+	<section ng-controller = "wordBank" >
 
 		<h1> Basic NG-repeat functionality </h1>
 		<h2 ng-repeat = "item in items">
 			name: {{item.name}} ; qty: {{ item["quantity"]}}
 		</h2>
+
+		<section-separator></section-separator>
 
 		<!-- Currently not working -->
 		<h1> {{title}} </h1>
@@ -24,8 +28,26 @@
 
 	</section>
 
+	<section-separator></section-separator>
+
 	<section ng-controller = "windowResizeFunctionality">
 		<h1> {{ title }} </h1>
 		<resize-window-functionality></resize-window-functionality>
 	</section>
+
+	<section-separator></section-separator>
+
+	<section class = "container-fluid" ng-controller = "dynamicElements">
+		<div class = "row">
+			<h1 class = "section-title"> {{title}} </h1>
+			<div class = "frame">
+				<window-resize-behavior ng-repeat = "block in blockElements">
+					<div class = "article-block" ng-class-odd = "'odd-article'" ng-class-even = "'even-article'">
+						<h4 class = "article-content"> {{$index}} - Content: {{block.content}} </h4>
+					</div>
+			</window-resize-behavior>
+			</div>
+		</div>
+	</section>
+
 </html>

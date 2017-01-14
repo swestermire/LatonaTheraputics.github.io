@@ -6,6 +6,9 @@ console.log("AngularJSFile.js initiated...");
 
 	var app = angular.module("angularJSPlayApp", []);
 
+	app.controller("commonBehavior", commonBehaviorCtrl)
+	.directive("sectionSeparator" , sectionSeparatorDirective);
+
 	// example of customer directives (DDO = directive definition object)
 	app.controller("wordBank",wordBankCtrl)
 	.directive("listItemDescription",listItemDescriptionDirective)
@@ -13,6 +16,9 @@ console.log("AngularJSFile.js initiated...");
 
 	app.controller("windowResizeFunctionality" , windowResizeFunctionalityCtrl)
 	.directive("resizeWindowFunctionality" , resizeWindowFunctionalityDirective);
+
+	app.controller("dynamicElements" , dynamicElementsCtrl)
+	.directive("windowResizeBehavior" , windowResizeBehaviorDirective);
 
 	//instance of an angularJS controller
 	wordBankCtrl.$inject = ["$scope"];
@@ -90,5 +96,77 @@ console.log("AngularJSFile.js initiated...");
 		angular.element($window).on('resize', func);
 		scope.$on("$destroy", cleanUp)
 	};
+
+	commonBehaviorCtrl.$inject = [];
+	function commonBehaviorCtrl(){
+		return
+	};
+
+	function sectionSeparatorDirective(){
+		var ddo = {
+			// link : link,
+			restrict : "E", //restricts to elements only, could be attributes as well
+			template : "<br><br> <h1 class = 'section-break'>         ====End of Section====            </h1> <br><br>"
+		}
+		return ddo;
+	};
+
+	dynamicElementsCtrl.$inject = ["$scope"]
+	function dynamicElementsCtrl($scope){
+		$scope.title = "Dynamic DOM Element Blocks"
+		
+		$scope.blockElements = {
+			0 : {
+				"content" : "blahblahblah"
+			},
+
+			1 : {
+				"content" : "moreblahblahblah"
+			},
+
+			2 : {
+				"content" : "blahblahbalhoversdasd aadadasdsad asd asd ad ad a das das das da sdwhelming blahblahbalhoversdasd aadadasdsad asd asd ad ad a das das das da sdwhelmingblahblahbalhoversdasd aadadasdsad asd asd ad ad a das das das da sdwhelmingblahblahbalhoversdasdblahblahbalhoversdasd aadadasdsad asd asd ad ad a das das das da sdwhelmingblahblahbalhoversdasd aadadasdsad asd asd ad ad a das das das da sdwhelmingblahblahbalhoversdasd aadadasdsad asd asd ad ad a das das das da sdwhelmingblahblahbalhoversdasd aadadasdsad asd asd ad ad a das das das da sdwhelmingblahblahbalhoversdasd aadadasdsad asd asd ad ad a das das das da sdwhelmingblahblahbalhoversdasd aadadasdsad asd asd ad ad a das das das da sdwhelmingblahblahbalhoversdasd aadadasdsad asd asd ad ad a das das das da sdwhelmingblahblahbalhoversdasd aadadasdsad asd asd ad ad a das das das da sdwhelming"
+			},
+
+			3 : {
+				"content" : "blahblahblah"
+			},
+
+			4 : {
+				"content" : "moreblahblahblaasd"
+			},
+
+			5 : {
+				"content" : "blahblahbalhoverwhelming"
+			}
+		}
+	};
+
+	function windowResizeBehaviorDirective($window){
+		var ddo = {
+			link : {
+				post : link,
+				pre : prelink
+			},
+			restrict : "E",
+		}
+		return ddo;
+
+		//!!! what is scope , element, and attrs as function link input values. I'm guessing they from AngJS
+		function link(scope , element, attrs){
+			console.log("post-link function fired!")
+			var rect = element[0].querySelector('.article-block').getBoundingClientRect();
+			console.log(element[0].querySelector('.article-block').attr)
+			console.log(rect.top);
+		}
+
+		function prelink(scope, element, attrs){
+			console.log("pre-link function fired!")
+		}
+
+		// cleanUp function to prevent zombie listeners
+		function cleanUp(){
+		}
+	}
 
 })();
