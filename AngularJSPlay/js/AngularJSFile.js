@@ -66,7 +66,6 @@ console.log("AngularJSFile.js initiated...");
 	windowResizeFunctionalityCtrl.$inject = ["$scope"];
 	function windowResizeFunctionalityCtrl($scope){
 		$scope.title = "Custom Directive through AngJS with behavior bound to $window resize";
-		
 	};
 
 	//AngJS custom directive to have certain behavior bound to window resize
@@ -80,6 +79,7 @@ console.log("AngularJSFile.js initiated...");
 		}
 		return ddo;
 
+		// this ddo link function is able to enact behavior when the screen is resized
 		function func(scope,element){
 			scope.width = $window.innerWidth;
 			angular.element($window).bind("resize" , function(){
@@ -145,22 +145,52 @@ console.log("AngularJSFile.js initiated...");
 	function windowResizeBehaviorDirective($window){
 		var ddo = {
 			link : {
-				post : link,
+				post : postlink,
 				pre : prelink
 			},
-			restrict : "E",
+			restrict : "AE",
 		}
 		return ddo;
 
 		//!!! what is scope , element, and attrs as function link input values. I'm guessing they from AngJS
-		function link(scope , element, attrs){
+		// post-linke occurs after DOM is fully loaded
+		function postlink(scope , element, attrs){
 			console.log("post-link function fired!")
-			var rect = element[0].querySelector('.article-block').getBoundingClientRect();
-			console.log(element[0].querySelector('.article-block').attr)
-			console.log(rect.top);
+			var articleBlocks = document.querySelectorAll(".article-block");
+			console.log("resizing window function firing!");
+
+
+			//binds behavior to window resize listener.  Is this creating a new listener?
+			angular.element($window).bind("resize" , function(){
+				// var element = document.querySelector('.article-block:last-child');
+				var element = document.querySelectorAll(".article-block");
+
+				console.log("article position left = " + (element[element.length-1].getBoundingClientRect()).left + ' ' +  $window.innerWidth)
+				if ((element[element.length-1].getBoundingClientRect()).left > ($window.innerWidth)/2){
+					console.log("Class name = " + element[element.length-1].className)
+					if (element[element.length-1].className == "even-article"){
+						console.log("even removed " + element[element.length-1].html());
+						element[element.length-1].remove('.even-article');	
+						element[element.length-1].className = 'odd-article article-block';
+
+					} else {
+						console.log("odd removed")
+						console.log("even removed " + element[element.length-1]);
+						element[element.length-1].className = "even-article article-block";
+						element[element.length-1].remove('.odd-article');
+
+					}
+					scope.$digest();
+				}
+
+				scope.$digest();
+			})
+
 		}
 
-		function prelink(scope, element, attrs){
+		// this ddo link function is able to enact behavior when the screen is resized
+		// pre-link occurs before the DOM the fully loaded
+		function prelink(scope,element){
 			console.log("pre-link function fired!")
 		}
 
