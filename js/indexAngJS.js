@@ -177,19 +177,21 @@ console.log("indexAngJS.js file initiated...");
 		function updateBio(targetedID){
 			var targetedPerson = $("#"+targetedID);
 
-			biographyContent = biographyContentGenerator(targetedID);
+			var biographyContent = biographyContentGenerator(targetedID);
 			$(".biography").text("");
 			$(".biography").append(biographyContent);
 		};
 
 		function biographyContentGenerator(targetedID){
 			var person = latonaTeamBios[targetedID];
+			var biographyReturn = "";
+
 			
 			biographyReturn = "<h3 class = biography-content>" + person["first name"] + ' ' + person["last name"] + "</h3><br>";
 			biographyReturn += "<h4 class = biography-content> Role: " + person["role"] + "</h4><br>";
 			biographyReturn += person["biography"];
 
-			return biographyReturn
+			return biographyReturn;
 		};
 
 		$scope.portraitHoverOn = function(event){

@@ -79,7 +79,7 @@ body content size: 24px?*/
 
 .therapy-particle-img{
   float: left;
-  background:url('images/smallparticleProfileCropped.png') no-repeat center center;
+  background:url('images/particleProfileCropped.png') no-repeat center center;
   background-size: contain;
 }
 

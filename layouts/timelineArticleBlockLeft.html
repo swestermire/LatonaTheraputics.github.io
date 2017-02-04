@@ -1,23 +1,30 @@
 <header>
-  <link rel = 'stylesheet' type = "text/css" href = "../../css/timelineArticleBlock.css">
+<!--   <script src = "../../js/angular.min.js"> </script>
+ -->  <link rel = 'stylesheet' type = "text/css" href = "../../css/timelineArticleBlock.css">
+<!--     <script src = "../../js/latonaTheraputicsAngJS.js"></script> -->
 </header>
 
-<section id = "article-block-left">
-      <div class = "article-block-container">
-        <div class = "article-block-gfx">
-          <div class = "article-block-header-gfx"> 
-          <div class = "article-left-carrot-gfx"></div>
-            <p> <b> {{entry["title"]}} </b> </p>
-            <p class = "header-date"> {{entry["date"]}} </p>
-          </div>
-          <div class = "article-block-content-gfx"> {{ entry["article content"] }}</div>
-            <div class = "article-block-footer-gfx">
 
-              <!-- need to update with angularJS $scope value for img source--> 
-              <img class = "article-class-img"
-                   src = "../../css/images/rocketyShipIcon.png"> </img>
-              {{entry["article type"]}}
+<!-- <section ng-app = "latonaTheraputicsAngJS"> -->
+<!-- <section ng-controller = "appendTimelineInfo"> -->
+  <section id = "article-block-left">
+        <div class = "article-block-container">
+          <div class = "article-block-gfx">
+            <div class = "article-block-header-gfx"> 
+            <div class = "article-left-carrot-gfx"></div>
+              <p id = "title"> <b> Test - {{entry["title"]}} </b> </p>
+              <p class = "header-date"> {{entry["date"]}} </p>
             </div>
+            <div class = "article-block-content-gfx"> {{ entry["article content"] }}</div>
+              <div class = "article-block-footer-gfx">
+
+                <!-- need to update with angularJS $scope value for img source--> 
+                <img class = "article-class-img"
+                     src = "../../css/images/rocketyShipIcon.png"> </img>
+                {{entry["article type"]}}
+              </div>
+          </div>
         </div>
-      </div>
-</section>
+  </section>
+<!-- </section> -->
+<!-- </section> -->
