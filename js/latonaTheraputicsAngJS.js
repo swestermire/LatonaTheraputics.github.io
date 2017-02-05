@@ -31,79 +31,51 @@ console.log("latonaTheraputicsAngJS initiated...");
 
 		  	/// calls function to populate article info into article blocks
 		  	populateArticleBlocksInfo();
-
 		  });
 
 		console.log("pre-DOM load check")
 
 		function populateArticleBlocksInfo(){
 
-	  	/// inject timeline articles with article content
+		  	//get all left article blocks
+		  		var allArticleBlocks = angular.element(document.getElementsByClassName('article-block-container'));
 
-	  	/// dummy content for now.
-	  // 		$scope.entry = {
-			// 	"title" : "suck it",
-			// 	"date" : "LONG!",
-			// 	"article content" : "ASDLASDKASLDSD",
-			// 	"article type" : "asdsadsa"
-			// };
+		  	//get all article content data and renders content
+		  	$http.get("../../public/timelineEvents.json").then(function(response){
 
-	  	//get all left article blocks
-	  		var allArticleBlockLeft = angular.element(document.getElementsByClassName('articleLeft'));
-	  		for (var idx = 0; idx < allArticleBlockLeft.length; idx++){
-	  			console.log('writing found article block lefts')
-	  			console.log(allArticleBlockLeft[idx]);
-	  		}
+		  		var timelineArticles = response.data;
 
-	  	//get all right article blocks
-	  		var allArticleBlockRight = angular.element(document.getElementsByClassName('articleRight'));
+		  		/// populating article blocks with content
+		  		console.log("allArticleBlocks length = " + allArticleBlocks.length)
+		  		for (var idx = 0; idx < allArticleBlocks.length; idx++){
+		  			var timelineArticle = timelineArticles[String(idx)];
+		  			populateArticleBlockInfo(allArticleBlocks[idx], timelineArticle, idx, "article-block-container");
+		  		}
 
-	  	//get all article content data
-	  	// Need to fill in this data.  This can be hardcoded for now... then we can transition to JSON file... then to 
-	  	// an actual server
+		  	});
 
-	  	//inject artcile data into article blocks
-	  		
-	  		$scope.entry = {
-				"title" : "suck it",
-				"date" : "LONG!",
-				"article content" : "ASDLASDKASLDSD",
-				"article type" : "asdsadsa"
+		  	/// populates an article based on DOM element input and content input
+			function populateArticleBlockInfo(DOM, content, idx, className){
+				/// don't know why I can't pass DOM element and do a child element search.
+				/// instead, I'm having the DOM element be reId'ed and then the child element is found
+				/// This is unfortunately not performance optimized... 
+
+				/// identifies all the content locations within the article element
+				var articleBlock = document.getElementsByClassName(className)[idx];
+				var title = angular.element(articleBlock.getElementsByClassName('title')); //getElementsByClassName ALWAYS RETURNS AN ARRAY!
+				var date = angular.element(articleBlock.getElementsByClassName('header-date'));
+				var articleType = angular.element(articleBlock.getElementsByClassName('article-type'));
+				var articleContent = angular.element(articleBlock.getElementsByClassName('article-content'));
+
+				// changes DOM element info
+				title[0].innerHTML = content["title"];
+				date[0].innerHTML = content["date"];
+				articleType[0].innerHTML = content["article type"];
+				articleContent[0].innerHTML = content["article content"];
 			};
-
-
-	  		var content = $scope.entry;
-
-	  		/// populating left article blocks
-	  		for (var idx = 0; idx < allArticleBlockLeft.length; idx++){
-	  			populateArticleBlockInfo(allArticleBlockLeft[idx], content);
-	  		}
-
-	  		/// populating right article blocks
-	  		for (var idx = 0; idx < allArticleBlockRight.length; idx++){
-	  			populateArticleBlockInfo(allArticleBlockRight[idx], content);
-	  		}
-
-	  	/// populates an article based on DOM element input and content input
-		function populateArticleBlockInfo(DOM, content){
-
-			// var title = angular.element(DOM.getElementById('title'));
-			// console.log("title element = " + title.innerHTML);
-			// title.innerHTML = "Updated Title " + $scope.entry["title"];
-			// console.log("updated title?");
-		};
-
 		};
 
 		$scope.titleAlt = "Alternate Title Block";
-
-		/// Test scoped entry value that does not work... 
-		// $scope.entry = {
-		// 	"title" : "suck it",
-		// 	"date" : "LONG!",
-		// 	"article content" : "ASDLASDKASLDSD",
-		// 	"article type" : "asdsadsa"
-		// };
 
 		// !! AngJS implementation of JSON get request
 		// a filter could be added to look for a date range, article types, etc... Will add later

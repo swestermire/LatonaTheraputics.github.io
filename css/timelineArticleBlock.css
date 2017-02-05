@@ -2,6 +2,31 @@
   margin-left: 100px;
 }
 
+.title{
+  font-weight: bold;
+  width: 70%;
+}
+
+.header-date{
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.article-type{
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-left: 25px;
+}
+
+.article-class-img{
+  float: left;
+}
+
+.article-content{
+  margin-top: 10px;
+}
+
 .article-left-carrot-gfx{
   position: absolute;
   width: 0px;
