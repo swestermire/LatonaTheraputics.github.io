@@ -1,4 +1,5 @@
 .article-block-container{
+  float: left;
   margin-left: 100px;
 }
 
@@ -25,6 +26,35 @@
 
 .article-content{
   margin-top: 10px;
+}
+
+.timeline-window{
+  position: relative;
+  background-color:lightgreen;
+  max-width: 1200px;
+  min-height: 100px;
+}
+
+.timelineCenterBlock{
+  position: absolute;
+}
+
+#article-block-left{
+  background-color: lightgrey;
+/*  position: absolute;*/
+/*  float: left;
+  margin-top: 25px;
+  height: 200px;
+  overflow: hidden;*/
+}
+
+#article-block-right{
+/*  float: left;*/
+  background-color: lightpink;
+/*  margin-top: 25px;
+  height: 200px;
+  overflow: hidden;*/
+/*  position: absolute;*/
 }
 
 .article-left-carrot-gfx{
