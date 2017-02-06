@@ -1,6 +1,8 @@
 .article-block-container{
   float: left;
-  margin-left: 100px;
+}
+
+.article-block-gfx{
 }
 
 .title{
@@ -31,7 +33,7 @@
 .timeline-window{
   position: relative;
   background-color:lightgreen;
-  max-width: 1200px;
+  max-width: 1600px;
   min-height: 100px;
 }
 
@@ -39,7 +41,7 @@
   position: absolute;
 }
 
-#article-block-left{
+.article-block-left{
   background-color: lightgrey;
 /*  position: absolute;*/
 /*  float: left;
@@ -48,7 +50,7 @@
   overflow: hidden;*/
 }
 
-#article-block-right{
+.article-block-right{
 /*  float: left;*/
   background-color: lightpink;
 /*  margin-top: 25px;
@@ -82,7 +84,7 @@
 .article-block-gfx{
   position: relative;
   margin-bottom: 100px;
-  max-width: 30vw;
+  max-width: 25vw;
   min-width: 400px;
   /*height: 280px;*/
   border-top: 1px solid darkorange;
