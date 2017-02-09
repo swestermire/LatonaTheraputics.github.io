@@ -24,24 +24,33 @@ console.log("latonaTheraputicsAngJS initiated...");
 	// article data.   This feels a bit dirty
 
 	// this is what dynamically serves up information displayed on article blocks
-	articleGeneratorCtrl.$inject = ['$scope' , '$http', '$compile', '$templateRequest'];
-	function articleGeneratorCtrl($scope, $http, $compile, $templateRequest){
+	articleGeneratorCtrl.$inject = ['$scope' , '$http', '$compile', '$templateRequest', "$window"];
+	function articleGeneratorCtrl($scope, $http, $compile, $templateRequest, $window){
 
 		  /// after DOM is loaded, these functions are executed.
 		  angular.element(document).ready(function(){
 		  	console.log("post-DOM load check");
 
 		  	/// calls function to populate article and position info into article blocks
-		  	createTimelineArticles();
+		  	createTimelineArticles($window);
 
 		  });
 
 		console.log("pre-DOM load check")
 
-		function createTimelineArticles(){
+		function createTimelineArticles($window){
 
 		  	//get all left article blocks
 		  		var allArticleBlocks = angular.element(document.getElementsByClassName('article-block-container'));
+
+		  		// checks to see if any article blocks are loaded. If not, then we must re-execute page reload
+		  		if (!allArticleBlocks.length){
+		  			// need to reload page.  Probably not the most elegant solution.
+		  			$window.location.reload();
+		  		}
+
+
+		  		console.log(" length for allArticleBlocks = " + allArticleBlocks.length)
 
 		  	//get all article content data and renders content
 		  	$http.get("../../public/timelineEvents.json").then(function(response){
@@ -125,7 +134,7 @@ console.log("latonaTheraputicsAngJS initiated...");
 		/// change article left or right type based on positioning
 		changeArticleLeftRight(timelineWindow, articles);
 
-		/// more of my mess up... 
+		/// more of my mess up... rechecks and corrects article placement
 		checkArticlePosition(articles);
 
 
@@ -182,7 +191,9 @@ console.log("latonaTheraputicsAngJS initiated...");
 
 		// my mess up... the way i created elements the article bleeds outside of the element width
 		// going to create a right margin for article-block-container to compensate.
-		var compensateRightMargin = articleWidth - articles[0].offsetWidth;
+		var compensateRightMargin =  articleWidth - articles[0].innerWidth;
+		console.log("articleWidth, article-block-gfx = " + articleWidth + ' article-block-gfx');
+		console.log("articles[0].offsetWidth, article-block-left/rt = " + articles[0].offsetWidth + ' ' + articles[0].className)
 		console.log('compensateRightMargin = ' + compensateRightMargin)
 
 		for (var idx = 0; idx < articles.length; idx++){
@@ -253,13 +264,17 @@ console.log("latonaTheraputicsAngJS initiated...");
 
 		// link function
 		function link(scope, element, attrs){
-			console.log("link function hit!");
+			
 			angular.element($window).bind('resize', function(){
+				
 				var articles = angular.element(document.getElementsByClassName('article-block-container'));
 				var timelineWindow = angular.element(document.getElementsByClassName('timeline-window'))[0];
 
+				/// adjustsTimelineWindow
+				// adjustTimelineWindowHeight(timelineWindow, articles);
+
 				/// adjust timeline-window placement to be centered relative to screen
-				elementCenter($window, timelineWindow);
+				elementCenter(window, timelineWindow);
 
 				/// adjust articles to be centered within timeline-window
 				adjustArticlePosition(timelineWindow, articles);
