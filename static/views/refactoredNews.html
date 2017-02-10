@@ -20,6 +20,7 @@
 
 <html ng-app = "latonaTheraputicsAngJS">
 <resize>
+
 <div ng-controller = "appendHeaderAndFooter">
 
 	<!-- this adds the header into the page -->
@@ -29,7 +30,6 @@
 
 		<div ng-repeat = "entry in timelineEventsData">
 			<div ng-class-odd = "'articleLeft'"> </div>
-			<div class = 'timelineCenterBlock'> </div>
 			<div ng-class-even = "'articleRight'"> </div>
 		</div>
 
@@ -39,5 +39,6 @@
 	<footer id = "footer"></footer>
 	
 </div>
+
 </resize>
 </html>

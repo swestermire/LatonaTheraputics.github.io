@@ -31,14 +31,17 @@ console.log("latonaTheraputicsAngJS initiated...");
 		  angular.element(document).ready(function(){
 		  	console.log("post-DOM load check");
 
-		  	/// calls function to populate article and position info into article blocks
-		  	createTimelineArticles($window);
+		  	// if media window > 1300 px
+		  	// calls function to create timeline (i.e. populate article info, positions, and extraneous timeline gfx
+		  	createTimeline($window);
+
+		  	// else media window < 1300 px, make smaller timeline
 
 		  });
 
 		console.log("pre-DOM load check")
 
-		function createTimelineArticles($window){
+		function createTimeline($window){
 
 		  	//get all left article blocks
 		  		var allArticleBlocks = angular.element(document.getElementsByClassName('article-block-container'));
@@ -64,8 +67,31 @@ console.log("latonaTheraputicsAngJS initiated...");
 		  		}
 
 		  		repositionTimelineArticles();
+
+			  	// calls function to create timeline block graphics
+			  	var templateUrl = '../../layouts/timelineCenterBlock.html';
+			  	createTimelineGraphics(templateUrl); 
 		  	});
 		};
+
+		// adds timeline graphics to DOM 
+		function createTimelineGraphics(templateUrl){
+			var articles = angular.element(document.getElementsByClassName('article-block-container'));
+			var className = 'timelineCenterBlock';
+			var htmlSnippet = "<div class = '" + className +"'> </div>";
+			for (var idx = 0; idx < articles.length; idx++){
+				var article = articles[idx];
+			 	var articleTop = article.getBoundingClientRect().top;
+
+			 	// document.body.innerHTML += htmlSnippet;
+
+
+			 	console.log("articleTop =  " + articleTop);
+			}
+
+			// fetches timeline gfx template
+			// fetchTimelineGfxTemplate(className);
+		}
 
 		$scope.titleAlt = "Alternate Title Block";
 
@@ -81,18 +107,27 @@ console.log("latonaTheraputicsAngJS initiated...");
 			$scope.fromJSONTest = angular.fromJson(response)
 		})
 
+		// injects template everywhere class found in DOM
 		$templateRequest('../../layouts/timelineArticleBlockLeft.html').then(function(template){
 
 			$compile($(".articleLeft").html(template).contents());
 		})
 
+		// injects template everywhere class found in DOM
 		$templateRequest("../../layouts/timelineArticleBlockRight.html").then(function(template){
 			$compile($(".articleRight").html(template).contents());
 		});
 
-		$templateRequest("../../layouts/timelineCenterBlock.html").then(function(template){
-			$compile($(".timelineCenterBlock").html(template).contents());
-		});
+		// function fetchTimelineGfxTemplate(className){
+		// 	$templateRequest("../../layouts/timelineCenterBlock.html").then(function(template){
+		// 		$compile($("." + String(className)).html(template).contents());
+		// 	})
+		// };
+
+		// injects template everywhere class found in DOM
+		// $templateRequest("../../layouts/timelineCenterBlock.html").then(function(template){
+		// 	$compile($(".timelineCenterBlock").html(template).contents());
+		// });
 
 		};
 	  	/// populates an article based on DOM element input and content input
@@ -183,7 +218,7 @@ console.log("latonaTheraputicsAngJS initiated...");
 
 	// adjusts articles so they are center relative to the reference window. 
 	// WARNING: ONLY WORKS WITH 2 COLUMN DESIGNS
-	function adjustArticlePosition(reference, articles){
+	function adjustArticlePosition(reference, articles, $window){
 		var refWidth = reference.offsetWidth;
 
 		//get article width.  All articles have the same width.
@@ -192,6 +227,9 @@ console.log("latonaTheraputicsAngJS initiated...");
 		// my mess up... the way i created elements the article bleeds outside of the element width
 		// going to create a right margin for article-block-container to compensate.
 		var compensateRightMargin =  articleWidth - articles[0].innerWidth;
+
+		// if page compensate not good, reload page?
+
 		console.log("articleWidth, article-block-gfx = " + articleWidth + ' article-block-gfx');
 		console.log("articles[0].offsetWidth, article-block-left/rt = " + articles[0].offsetWidth + ' ' + articles[0].className)
 		console.log('compensateRightMargin = ' + compensateRightMargin)
@@ -249,6 +287,8 @@ console.log("latonaTheraputicsAngJS initiated...");
 			}
 		}
 	};
+
+
 
 /// Custom Directive
 	
