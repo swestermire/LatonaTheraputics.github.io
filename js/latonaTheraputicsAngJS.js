@@ -78,13 +78,14 @@ console.log("latonaTheraputicsAngJS initiated!!!");
 		function createTimelineGraphics(templateUrl){
 			var articles = angular.element(document.getElementsByClassName('article-block-container'));
 			var timelineWindow = angular.element(document.getElementsByClassName('timeline-window'))[0];
+			var articleClassName = 'article-block-container';
 			var className = 'timelineCenterBlock';
 			var htmlSnippet = "<div class = '" + className +"'> </div>";
 
 			for (var idx = 0; idx < articles.length; idx++){
 			 	
 			 	// finds article top position
-				var article = angular.element(document.getElementsByClassName('article-block-container'))[idx];
+				var article = document.getElementsByClassName('article-block-container')[idx];
 			 	var articleTop = article.getBoundingClientRect().top;
 			 	console.log("article top calculated correctly? = " + articleTop);
 
@@ -92,23 +93,26 @@ console.log("latonaTheraputicsAngJS initiated!!!");
 			 	document.getElementsByClassName('timeline-window')[0].innerHTML += htmlSnippet;
 
 			 	// get timelineCenterBlockElement
-			 	var gfxElement = document.getElementsByClassName(className)[document.getElementsByClassName(className).length-1];
+			 	var gfxIdx = document.getElementsByClassName(className).length-1;
 			 	
 			 	// center element height-wise based on reference element
-			 	centerElement(article, gfxElement, ["height"]);
+			 	centerElement(idx, articleClassName, gfxIdx, className, ["height"]);
 
 			 	// center element width-wise based on reference element
-			 	centerElement(timelineWindow, gfxElement, ['width']);
+			 	centerElement(0, 'timeline-window', gfxIdx, className, ['width']);
 
 			}
 
 			// fetches timeline gfx template
 			// fetchTimelineGfxTemplate(className);
 		}
-
+		// why can't I pass actual DOM elements??? So strange.. I've resorted to using index values
 		// Repositions element based on height to a referenced element
-		function centerElement(reference, element, options){
+		function centerElement(refIdx, refClassName, elementIdx, elementClassName, options){
 			console.log("centerElement function hit!")
+			var reference = document.getElementsByClassName(refClassName)[refIdx];
+			var element = document.getElementsByClassName(elementClassName)[elementIdx];
+
 			// could also use a try-catch conditions
 			if (options.indexOf("height") > -1){
 				var refTopPos = reference.getBoundingClientRect().top;
