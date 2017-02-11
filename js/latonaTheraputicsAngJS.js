@@ -1,6 +1,6 @@
 'use strict'
 
-console.log("latonaTheraputicsAngJS initiated...");
+console.log("latonaTheraputicsAngJS initiated!!!");
 
 (function(){
 	var app = angular.module("latonaTheraputicsAngJS", []);
@@ -77,21 +77,66 @@ console.log("latonaTheraputicsAngJS initiated...");
 		// adds timeline graphics to DOM 
 		function createTimelineGraphics(templateUrl){
 			var articles = angular.element(document.getElementsByClassName('article-block-container'));
+			var timelineWindow = angular.element(document.getElementsByClassName('timeline-window'))[0];
 			var className = 'timelineCenterBlock';
 			var htmlSnippet = "<div class = '" + className +"'> </div>";
+
 			for (var idx = 0; idx < articles.length; idx++){
-				var article = articles[idx];
+			 	
+			 	// finds article top position
+				var article = angular.element(document.getElementsByClassName('article-block-container'))[idx];
 			 	var articleTop = article.getBoundingClientRect().top;
+			 	console.log("article top calculated correctly? = " + articleTop);
 
-			 	// document.body.innerHTML += htmlSnippet;
+			 	// for right now, just adding HTMLsnippet that has CSS attributs associated
+			 	document.getElementsByClassName('timeline-window')[0].innerHTML += htmlSnippet;
 
+			 	// get timelineCenterBlockElement
+			 	var gfxElement = document.getElementsByClassName(className)[document.getElementsByClassName(className).length-1];
+			 	
+			 	// center element height-wise based on reference element
+			 	centerElement(article, gfxElement, ["height"]);
 
-			 	console.log("articleTop =  " + articleTop);
+			 	// center element width-wise based on reference element
+			 	centerElement(timelineWindow, gfxElement, ['width']);
+
 			}
 
 			// fetches timeline gfx template
 			// fetchTimelineGfxTemplate(className);
 		}
+
+		// Repositions element based on height to a referenced element
+		function centerElement(reference, element, options){
+			console.log("centerElement function hit!")
+			// could also use a try-catch conditions
+			if (options.indexOf("height") > -1){
+				var refTopPos = reference.getBoundingClientRect().top;
+				var refHeight = reference.style.height;
+				var elementHeight = element.style.height;
+				var heightDiff = Math.floor(refTopPos + (refHeight - elementHeight)/2);
+
+				if (heightDiff > 0){
+					element.style.top = heightDiff + 'px';
+				} else {
+					console.log("element height is larger than the reference element:" + elementHeight + '/' + refHeight );
+					console.log("refTopPos  = " + refTopPos)
+				}
+
+			}
+
+			if (options.indexOf("width") > -1){
+				var refWidth = reference.style.innerWidth;
+				var elementWidth = element.style.innerWidth;
+				var widthDiff = Math.floor(refWidth/2 - elementWidth/2);
+
+				if (widthDiff > 0){
+					element.style.left = widthDiff + 'px';
+				} else {
+					console.log("element width is larger than the reference element");
+				}
+			}
+		};
 
 		$scope.titleAlt = "Alternate Title Block";
 

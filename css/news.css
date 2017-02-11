@@ -4,6 +4,13 @@ body {
   padding-top: 200px;
 }
 
+.timelineCenterBlock{
+  background-color: red;
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+}
+
 .timeline-gfx{
   position: absolute;
   width: 30%;
