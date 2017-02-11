@@ -78,7 +78,7 @@ console.log("latonaTheraputicsAngJS initiated!!!");
 		function createTimelineGraphics(templateUrl){
 			var articles = angular.element(document.getElementsByClassName('article-block-container'));
 			var timelineWindow = angular.element(document.getElementsByClassName('timeline-window'))[0];
-			var articleClassName = 'article-block-container';
+			var headerClassName = 'article-block-header-gfx';
 			var className = 'timelineCenterBlock';
 			var htmlSnippet = "<div class = '" + className +"'> </div>";
 
@@ -96,7 +96,7 @@ console.log("latonaTheraputicsAngJS initiated!!!");
 			 	var gfxIdx = document.getElementsByClassName(className).length-1;
 			 	
 			 	// center element height-wise based on reference element
-			 	centerElement(idx, articleClassName, gfxIdx, className, ["height"]);
+			 	centerElement(idx, headerClassName, gfxIdx, className, ["height"]);
 
 			 	// center element width-wise based on reference element
 			 	centerElement(0, 'timeline-window', gfxIdx, className, ['width']);
@@ -116,8 +116,8 @@ console.log("latonaTheraputicsAngJS initiated!!!");
 			// could also use a try-catch conditions
 			if (options.indexOf("height") > -1){
 				var refTopPos = reference.getBoundingClientRect().top;
-				var refHeight = reference.style.height;
-				var elementHeight = element.style.height;
+				var refHeight = reference.style.innerHeight;
+				var elementHeight = element.style.innerHeight;
 				var heightDiff = Math.floor(refTopPos + (refHeight - elementHeight)/2);
 
 				if (heightDiff > 0){
